@@ -1,6 +1,6 @@
 import { apiEnabled, apiPost } from './api.js';
 
-const KEY = 'minave.clicks';
+const KEY = 'kardmo.clicks';
 const MAX = 500;
 
 /**
@@ -9,7 +9,7 @@ const MAX = 500;
  */
 export function trackClick(pieza, tienda, extra = {}) {
   const evento = { pieza, tienda, ts: new Date().toISOString(), ...extra };
-  console.info('[MiNave] clic afiliado', evento);
+  console.info('[KarDmo] clic afiliado', evento);
   try {
     const lista = JSON.parse(localStorage.getItem(KEY) || '[]');
     lista.push(evento);

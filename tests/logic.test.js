@@ -40,7 +40,7 @@ test('cada rin tiene medidas compatibles del mismo diámetro', () => {
 test('el link de compartir conserva la configuración (incluye acentos)', () => {
   const cfg = { ...defaultConfig(vehicle), n: 'Mi Sonata ñandú', rd: 19, t: '245/35R19', u: ['faros_led'] };
   assert.deepEqual(decodeConfig(encodeConfig(cfg)), cfg);
-  const url = buildShareUrl(cfg, 'https://minave.mx/app/?x=1');
+  const url = buildShareUrl(cfg, 'https://kardmo.mx/app/?x=1');
   assert.deepEqual(readConfigFromUrl(url), cfg);
   assert.equal(decodeConfig('%%%basura'), null);
 });
@@ -75,4 +75,19 @@ test('datos: todo lo relacionado en las fichas existe en affiliates.json', () =>
     (f.relacionadas ?? []).forEach((r) => assert.ok(affiliates.piezas[r], `${id} -> ${r}`));
   }
   for (const m of vehicle.mejoras) assert.ok(vehicle.fichas[m.id] && affiliates.piezas[m.id], m.id);
+});
+
+test('guías: cada paso apunta a piezas reales y lo que se compra tiene link', () => {
+  const guides = JSON.parse(readFileSync(new URL('../src/data/guides/engine-2.4-gdi.json', import.meta.url)));
+  const ids = new Set(engine.piezas.map((p) => p.id));
+  for (const g of guides.guias) {
+    g.piezas.forEach((id) => assert.ok(ids.has(id), `${g.id}: pieza ${id}`));
+    g.refacciones.forEach((id) => assert.ok(affiliates.piezas[id], `${g.id}: refacción ${id}`));
+    g.herramientas.filter((h) => h.afiliado).forEach((h) => assert.ok(affiliates.piezas[h.afiliado], `${g.id}: herramienta ${h.afiliado}`));
+    assert.ok(g.pasos.length > 0);
+    for (const p of g.pasos) {
+      p.foco.forEach((id) => assert.ok(ids.has(id), `${g.id}: foco ${id}`));
+      Object.keys(p.mover ?? {}).forEach((id) => assert.ok(ids.has(id), `${g.id}: mover ${id}`));
+    }
+  }
 });

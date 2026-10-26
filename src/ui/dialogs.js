@@ -74,7 +74,7 @@ export function shareDialog({ url }) {
     }
     e.target.textContent = '✓ Copiado';
   });
-  m.el.querySelector('[data-native]')?.addEventListener('click', () => navigator.share({ title: 'Mi carro en MiNave', url }).catch(() => {}));
+  m.el.querySelector('[data-native]')?.addEventListener('click', () => navigator.share({ title: 'Mi carro en KarDmo', url }).catch(() => {}));
 }
 
 export function cartDialog({ list, carName, onRemove, onQuote }) {

@@ -1,7 +1,8 @@
 import { esc } from './dom.js';
+import { guideButtons } from './guide-card.js';
 
 /** Pestaña "Motor": acciones + lista de piezas. Clic en una pieza = la cámara vuela a ella. */
-export function createEnginePanel(root, { engineData, onPart, onAction }) {
+export function createEnginePanel(root, { engineData, guides = [], onPart, onGuide, onAction }) {
   const groups = new Map();
   engineData.piezas.forEach((p) => {
     if (!groups.has(p.categoria)) groups.set(p.categoria, []);
@@ -15,7 +16,11 @@ export function createEnginePanel(root, { engineData, onPart, onAction }) {
       <div class="engine-actions" data-engine-actions></div>
     </section>
     <section class="section">
-      <input class="parts-search" type="search" placeholder="Buscar pieza (ej. bujía, banda…)" aria-label="Buscar pieza">
+      <input class="parts-search" type="search" placeholder="¿Qué quieres hacer? (ej. cambiar bujías)" aria-label="Buscar pieza o guía">
+      <div class="parts-group" data-group data-guides>
+        <h4>¿Qué quieres hacer?</h4>
+        ${guideButtons(guides)}
+      </div>
       <div data-list>
         ${[...groups.entries()]
           .map(
@@ -37,10 +42,15 @@ export function createEnginePanel(root, { engineData, onPart, onAction }) {
   const search = root.querySelector('.parts-search');
   search.addEventListener('input', () => {
     const q = normalize(search.value);
-    root.querySelectorAll('[data-part]').forEach((b) => (b.hidden = q && !b.dataset.search.includes(q)));
-    root.querySelectorAll('[data-group]').forEach((g) => (g.hidden = ![...g.querySelectorAll('[data-part]')].some((b) => !b.hidden)));
+    // Busca por palabras sueltas: "quiero cambiar bujias" encuentra la guía y la pieza.
+    const words = q.split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w));
+    const match = (txt) => !words.length || words.some((w) => txt.includes(w.replace(/s$/, '')));
+    root.querySelectorAll('[data-search]').forEach((b) => (b.hidden = !match(b.dataset.search)));
+    root.querySelectorAll('[data-group]').forEach((g) => (g.hidden = ![...g.querySelectorAll('[data-search]')].some((b) => !b.hidden)));
   });
   root.addEventListener('click', (ev) => {
+    const guide = ev.target.closest('[data-guide]');
+    if (guide) return onGuide(guide.dataset.guide);
     const part = ev.target.closest('[data-part]');
     if (part) return onPart(part.dataset.part);
     const act = ev.target.closest('[data-action]');
@@ -60,6 +70,8 @@ export function createEnginePanel(root, { engineData, onPart, onAction }) {
     },
   };
 }
+
+const STOP = new Set(['quiero', 'como', 'cambiar', 'cambio', 'las', 'los', 'del', 'una', 'uno', 'para', 'hacer', 'mis', 'mi']);
 
 function normalize(s) {
   return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');

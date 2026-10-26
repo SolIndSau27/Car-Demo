@@ -4,7 +4,7 @@ import { esc } from './dom.js';
 export function renderLayout(root, vehicle) {
   root.innerHTML = `
     <header class="topbar">
-      <div class="brand"><span class="mark" aria-hidden="true">▲</span>MiNave</div>
+      <div class="brand"><span class="mark" aria-hidden="true">▲</span>KarDmo</div>
       <div class="compat"><strong id="car-name"></strong><small>${esc(vehicle.compatibilidad)}</small></div>
       <nav class="top-actions" aria-label="Acciones">
         <button data-action="save" title="Guardar mi carro">💾 <span>Guardar</span></button>

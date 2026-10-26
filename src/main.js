@@ -3,5 +3,5 @@ import { startApp } from './app.js';
 
 startApp(document.getElementById('app')).catch((err) => {
   console.error(err);
-  document.getElementById('app').innerHTML = `<p style="padding:24px">No se pudo iniciar MiNave: ${err.message}</p>`;
+  document.getElementById('app').innerHTML = `<p style="padding:24px">No se pudo iniciar KarDmo: ${err.message}</p>`;
 });

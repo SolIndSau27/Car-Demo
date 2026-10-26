@@ -1180,6 +1180,186 @@
           "precio_aprox_mxn": 190
         }
       ]
+    },
+    "arnes_bobinas": {
+      "titulo": "Conector / arnés de bobina",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Conector / arnés de bobina",
+          "url_base": "https://listado.mercadolibre.com.mx/conector-arnes-bobina-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Conector / arnés de bobina",
+          "url_base": "https://www.amazon.com.mx/s?k=conector+arnes+bobina+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 490
+        }
+      ]
+    },
+    "dado_bujias": {
+      "titulo": "Dado para bujía de pared delgada 14 mm",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Dado para bujía de pared delgada 14 mm",
+          "url_base": "https://listado.mercadolibre.com.mx/dado-bujia-14mm-pared-delgada",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 220
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Dado para bujía de pared delgada 14 mm",
+          "url_base": "https://www.amazon.com.mx/s?k=dado+bujia+14mm+pared+delgada",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 240
+        }
+      ]
+    },
+    "calibrador_bujias": {
+      "titulo": "Calibrador de bujías de alambre",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Calibrador de bujías de alambre",
+          "url_base": "https://listado.mercadolibre.com.mx/calibrador-bujias-alambre",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 150
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Calibrador de bujías de alambre",
+          "url_base": "https://www.amazon.com.mx/s?k=calibrador+bujias+alambre",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 160
+        }
+      ]
+    },
+    "torquimetro": {
+      "titulo": "Torquímetro de 3/8\"",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Torquímetro de 3/8\"",
+          "url_base": "https://listado.mercadolibre.com.mx/torquimetro-3/8",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Torquímetro de 3/8\"",
+          "url_base": "https://www.amazon.com.mx/s?k=torquimetro+3/8",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 970
+        }
+      ]
+    },
+    "scanner_obd2": {
+      "titulo": "Escáner OBD2",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Escáner OBD2",
+          "url_base": "https://listado.mercadolibre.com.mx/escaner-obd2-automotriz",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Escáner OBD2",
+          "url_base": "https://www.amazon.com.mx/s?k=escaner+obd2+automotriz",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 490
+        }
+      ]
+    },
+    "llave_filtro_aceite": {
+      "titulo": "Llave para filtro de aceite",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Llave para filtro de aceite",
+          "url_base": "https://listado.mercadolibre.com.mx/llave-filtro-de-aceite",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 180
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Llave para filtro de aceite",
+          "url_base": "https://www.amazon.com.mx/s?k=llave+filtro+de+aceite",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 190
+        }
+      ]
+    },
+    "arandela_carter": {
+      "titulo": "Arandela para tapón de cárter",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Arandela para tapón de cárter",
+          "url_base": "https://listado.mercadolibre.com.mx/arandela-tapon-carter-hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 60
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Arandela para tapón de cárter",
+          "url_base": "https://www.amazon.com.mx/s?k=arandela+tapon+carter+hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 60
+        }
+      ]
+    },
+    "anticongelante": {
+      "titulo": "Anticongelante de larga duración (galón)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Anticongelante de larga duración (galón)",
+          "url_base": "https://listado.mercadolibre.com.mx/anticongelante-larga-duracion-hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 320
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Anticongelante de larga duración (galón)",
+          "url_base": "https://www.amazon.com.mx/s?k=anticongelante+larga+duracion+hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 350
+        }
+      ]
+    },
+    "limpiador_cuerpo_aceleracion": {
+      "titulo": "Limpiador de cuerpo de aceleración",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Limpiador de cuerpo de aceleración",
+          "url_base": "https://listado.mercadolibre.com.mx/limpiador-cuerpo-de-aceleracion",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 160
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Limpiador de cuerpo de aceleración",
+          "url_base": "https://www.amazon.com.mx/s?k=limpiador+cuerpo+de+aceleracion",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 170
+        }
+      ]
     }
   }
 }

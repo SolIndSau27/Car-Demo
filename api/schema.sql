@@ -1,4 +1,4 @@
--- MiNave · esquema propuesto para la fase 2 (MySQL 8 / MariaDB 10.6, Hostinger).
+-- KarDmo · esquema propuesto para la fase 2 (MySQL 8 / MariaDB 10.6, Hostinger).
 -- Aún no se usa: el frontend de la fase 1 funciona sin backend.
 
 CREATE TABLE users (

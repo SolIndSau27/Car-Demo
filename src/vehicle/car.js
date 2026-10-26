@@ -117,7 +117,21 @@ export async function createCar(vehicle) {
     Object.assign(current, cfg);
   }
 
+  // Carrocería translúcida (para ver el motor desde ángulos tapados en las guías).
+  const ghostState = new Map();
+  function setGhost(on) {
+    for (const m of Object.values(mats)) {
+      if (!ghostState.has(m)) ghostState.set(m, { transparent: m.transparent, opacity: m.opacity, depthWrite: m.depthWrite });
+      const o = ghostState.get(m);
+      m.transparent = on || o.transparent;
+      m.opacity = on ? Math.min(o.opacity, 0.12) : o.opacity;
+      m.depthWrite = on ? false : o.depthWrite;
+      m.needsUpdate = true;
+    }
+  }
+
   return {
+    setGhost,
     root,
     body,
     mats,

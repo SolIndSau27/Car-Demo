@@ -1,4 +1,4 @@
-# MiNave
+# KarDmo
 
 Web app en español (México) para ver tu carro en 3D, abrirlo, despiezar el motor, personalizarlo y guardar tu versión. Primer vehículo: sedán mediano 2016 con motor 2.4L GDI (texto de compatibilidad: "Compatible con Hyundai Sonata 2016"). No se usan logos ni marcas en el modelo ni en la interfaz.
 
@@ -62,7 +62,7 @@ Para validar un dato: corrígelo en el JSON y cambia `"verificado"` a `true`; la
 
 - `src/data/affiliates.json`: por pieza, `productos: [{ tienda, titulo, url_base, tag_afiliado, precio_aprox_mxn }]`. Hoy `url_base` son búsquedas; cámbialas por productos específicos cuando los tengas. `{medida}` y `{diametro}` se sustituyen con la configuración del usuario.
 - `buildAffiliateUrl(producto)` (en `src/services/affiliates.js`) es la única función que arma links: agrega el tag del producto o, si viene vacío, el del `.env`. El nombre del parámetro por tienda está en `affiliates.json > tiendas` (`tag` para Amazon; `matt_tool` para Mercado Libre: confírmalo en tu panel de afiliados de Mercado Libre).
-- Cada clic pasa por `trackClick(pieza, tienda)` (`src/services/tracking.js`): en fase 1 queda en consola y en `localStorage['minave.clicks']`; si defines `VITE_API_URL`, también se manda a la API.
+- Cada clic pasa por `trackClick(pieza, tienda)` (`src/services/tracking.js`): en fase 1 queda en consola y en `localStorage['kardmo.clicks']`; si defines `VITE_API_URL`, también se manda a la API.
 - Cada bloque de compra muestra: "Este link puede generarnos una comisión sin costo extra para ti".
 
 ## Agregar otro modelo de carro

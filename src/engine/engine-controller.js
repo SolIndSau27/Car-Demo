@@ -114,6 +114,18 @@ export function createEngineController({ root, parts, partsData, montaje, openHo
       emit();
     },
     isInternal: (id) => Boolean(defs.get(id)?.interna),
+    /**
+     * Pose de guía: desplaza piezas desde su lugar (coordenadas del motor) con el motor instalado,
+     * p. ej. { bobinas: [0, 0.2, 0] }. Las piezas que no aparecen regresan a su lugar.
+     */
+    setPose(offsets = {}, duration = 0.8) {
+      const jobs = [];
+      parts.forEach((g, id) => {
+        const o = offsets[id] ?? [0, 0, 0];
+        jobs.push(tweenPos(g, base.get(id).clone().add(new THREE.Vector3(o[0], o[1], o[2])), duration, 'power2.inOut'));
+      });
+      return Promise.all(jobs);
+    },
   };
   return api;
 }

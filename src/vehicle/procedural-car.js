@@ -215,7 +215,7 @@ function engineBay(ctx) {
   const g = new THREE.Group();
   const x0 = sil.cofre.x_atras;
   const x1 = sil.fascia_delantera_x;
-  g.add(box(x1 - x0, 0.02, 1.5, mats.inner, [(x0 + x1) / 2, 0.22, 0]));
+  g.add(box(x1 - x0, 0.02, 1.5, mats.inner, [(x0 + x1) / 2, 0.19, 0]));
   g.add(box(0.03, 0.7, 1.5, mats.inner, [x0 - 0.01, 0.58, 0]));
   g.add(box(0.05, 0.42, 1.36, mats.inner, [x1 - 0.02, 0.48, 0]));
   g.add(box(0.03, 0.34, 1.16, mats.trim, [x1 - 0.06, 0.48, 0]));

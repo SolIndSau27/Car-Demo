@@ -305,7 +305,7 @@ table.data th { color: var(--muted); font-weight: 600; }
     left: 0;
     bottom: 0;
     width: 100%;
-    max-height: 78%;
+    max-height: 52%;
     border-radius: 18px 18px 0 0;
     transform: translateY(100%);
     opacity: 1;
@@ -315,3 +315,20 @@ table.data th { color: var(--muted); font-weight: 600; }
   .modal-backdrop { place-items: end center; padding: 0; }
   .modal { border-radius: 18px 18px 0 0; max-height: 88vh; }
 }
+
+/* ---------- Guías paso a paso ---------- */
+.guide-list { display: grid; gap: 6px; }
+.guide-btn { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 9px 10px; }
+.guide-btn:hover { border-color: var(--brand); background: #f6f9ff; }
+.guide-btn .ico { font-size: 18px; }
+.guide-btn .txt { flex: 1; min-width: 0; }
+.guide-btn strong { display: block; font-size: 14px; }
+.guide-btn small { color: var(--muted); font-size: 12px; }
+.steps { display: flex; gap: 4px; flex-wrap: wrap; margin: 0 0 12px; }
+.step-dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: #fff; font-size: 12px; font-weight: 700; color: var(--muted); padding: 0; }
+.step-dot[aria-current='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.step-box { background: #f6f8fa; border-radius: 12px; padding: 12px 14px; }
+.step-box h3 { font-size: 17px; margin: 2px 0 6px; }
+.step-num { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+.guide-nav { justify-content: space-between; }
+.guide-nav .btn { flex: 1; }

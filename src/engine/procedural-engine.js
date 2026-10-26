@@ -23,6 +23,8 @@ function engineMaterials() {
     copper: std(0xb87333, 0.35, 0.8),
     filter: std(0x1f5fbf, 0.5, 0.2),
     red: std(0xb3261e, 0.5, 0.2),
+    wire: std(0x111214, 0.6, 0.05),
+    connector: std(0x5a5f66, 0.6, 0.1),
   };
 }
 
@@ -64,6 +66,13 @@ const BUILDERS = {
       grp.add(m(CY(0.008, 0.05), M.ceramic, [0, 0.43, z]), m(CY(0.011, 0.016, 6), M.steel, [0, 0.4, z]), m(CY(0.005, 0.02), M.steel, [0, 0.382, z]));
       return grp;
     }),
+  arnes_bobinas: (M) => {
+    const pts = [[0.07, 0.56, -0.3], [0.05, 0.625, -0.22], ...CYL.map((z) => [0.05, 0.63, z]), [0.05, 0.625, 0.22], [0.08, 0.57, 0.3]];
+    const curve = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p)));
+    const g = [m(new THREE.TubeGeometry(curve, 60, 0.009, 8), M.wire)];
+    for (const z of CYL) g.push(m(B(0.04, 0.028, 0.03), M.connector, [0.048, 0.6, z]));
+    return g;
+  },
   arboles_levas: (M) =>
     [-0.055, 0.055].map((x) => {
       const grp = new THREE.Group();
@@ -158,7 +167,7 @@ export function buildProceduralEngine(partsData) {
   for (const def of partsData.piezas) {
     const builder = BUILDERS[def.id];
     if (!builder) {
-      console.warn('[MiNave] pieza sin geometría procedural:', def.id);
+      console.warn('[KarDmo] pieza sin geometría procedural:', def.id);
       continue;
     }
     const g = new THREE.Group();

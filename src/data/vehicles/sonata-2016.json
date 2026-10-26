@@ -216,7 +216,7 @@
     }
   },
   "motor_montaje": {
-    "posicion": [1.56, 0.23, -0.04],
+    "posicion": [1.56, 0.2, -0.04],
     "posicion_fuera": [3.75, 0.55, 0],
     "altura_extraccion": 2.1
   },

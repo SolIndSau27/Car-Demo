@@ -2,8 +2,8 @@
  * Garage local (fase 1). La forma de los datos es la misma que usará la API en fase 2:
  * { id, nombre, vehiculo, config, actualizado }.
  */
-const GARAGE_KEY = 'minave.garage';
-const CURRENT_KEY = 'minave.actual';
+const GARAGE_KEY = 'kardmo.garage';
+const CURRENT_KEY = 'kardmo.actual';
 
 function read(key, fallback) {
   try {

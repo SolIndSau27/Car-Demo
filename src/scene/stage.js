@@ -63,7 +63,7 @@ export function createStage(container) {
   controls.target.set(0.2, 0.6, 0);
   controls.enableDamping = true;
   controls.dampingFactor = 0.08;
-  controls.minDistance = 0.6;
+  controls.minDistance = 0.25;
   controls.maxDistance = 14;
   controls.maxPolarAngle = Math.PI / 2 - 0.04; // no meterse bajo el piso
   controls.enablePan = true;
@@ -75,11 +75,16 @@ export function createStage(container) {
     if (camera.position.y < 0.08) camera.position.y = 0.08;
   });
 
+  // Franja derecha tapada por la ficha: el encuadre se recorre para centrar en la zona libre.
+  let insetRight = 0;
   function resize() {
     const w = container.clientWidth || 1;
     const h = container.clientHeight || 1;
     renderer.setSize(w, h, false);
-    camera.aspect = w / h;
+    const inset = Math.min(insetRight, w * 0.6);
+    camera.aspect = (w + inset) / h;
+    if (inset > 0) camera.setViewOffset(w + inset, h, inset, 0, w, h);
+    else camera.clearViewOffset();
     camera.updateProjectionMatrix();
   }
   new ResizeObserver(resize).observe(container);
@@ -99,6 +104,10 @@ export function createStage(container) {
     camera,
     controls,
     onTick: (fn) => tickers.add(fn),
+    setInsetRight(px) {
+      insetRight = px;
+      resize();
+    },
     /** Detiene/reanuda el loop (útil para capturas y pruebas automáticas). */
     setPaused(paused) {
       renderer.setAnimationLoop(paused ? null : frame);

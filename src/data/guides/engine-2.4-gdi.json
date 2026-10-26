@@ -1,0 +1,170 @@
+{
+  "id": "guias-2.4-gdi",
+  "motor": "engine-2.4-gdi",
+  "aviso": "Guía de referencia. Las especificaciones están sin verificar: confírmalas en tu manual de servicio antes de apretar o calibrar.",
+  "nota": "Cada paso: foco = piezas a encuadrar; mover = desplazamiento acumulado (coordenadas del motor, metros) de las piezas que se retiran; rayosX = hace translúcidas las carcasas para ver piezas internas; vista = dirección de la cámara (opcional).",
+  "guias": [
+    {
+      "id": "cambiar_bujias",
+      "titulo": "Cambiar bujías",
+      "piezas": ["bujias"],
+      "dificultad": "Fácil",
+      "tiempo": "45–60 min",
+      "cuando": "Cada 60,000–100,000 km según el tipo de bujía, o si hay falla de encendido, arranque difícil o más consumo.",
+      "herramientas": [
+        { "nombre": "Matraca de 3/8\" con extensión de 6\"", "afiliado": null },
+        { "nombre": "Dado de bujía de pared delgada (14 mm aprox.)", "afiliado": "dado_bujias" },
+        { "nombre": "Dado de 10 mm (tornillos de bobina)", "afiliado": null },
+        { "nombre": "Torquímetro", "afiliado": "torquimetro" },
+        { "nombre": "Calibrador de bujías (laminillas de alambre)", "afiliado": "calibrador_bujias" },
+        { "nombre": "Aire comprimido o sopladora", "afiliado": null }
+      ],
+      "refacciones": ["bujias", "grasa_dielectrica"],
+      "especificaciones": [
+        { "dato": "Bujías", "valor": "4 de iridio, rosca de 14 mm", "verificado": false },
+        { "dato": "Calibración (gap)", "valor": "1.0–1.1 mm", "verificado": false },
+        { "dato": "Torque de bujía", "valor": "15–20 lb·ft (20–27 N·m)", "verificado": false },
+        { "dato": "Torque tornillo de bobina", "valor": "≈ 7 lb·ft (10 N·m)", "verificado": false }
+      ],
+      "pasos": [
+        { "titulo": "Motor frío y cofre abierto", "texto": "Trabaja con el motor completamente frío: la cabeza es de aluminio y la rosca se daña si quitas las bujías en caliente. Abre el cofre y ubica las 4 bobinas encima de la tapa de punterías.", "foco": ["tapa_punterias", "bobinas"] },
+        { "titulo": "Desconecta las bobinas", "texto": "Presiona la pestaña de cada conector y jálalo derecho. No jales del cable. Marca el orden si te da miedo confundirlos (cilindro 1 es el del lado de la banda).", "foco": ["arnes_bobinas"], "mover": { "arnes_bobinas": [0, 0.14, 0.05] } },
+        { "titulo": "Saca las bobinas", "texto": "Quita el tornillo de 10 mm de cada bobina y sácalas girándolas un poco mientras jalas hacia arriba. Revisa que el capuchón de hule no esté roto ni con marcas de carbón.", "foco": ["bobinas"], "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0] } },
+        { "titulo": "Limpia los pozos", "texto": "Sopla con aire cada pozo antes de aflojar la bujía para que no caiga tierra al cilindro. Si encuentras aceite en el pozo, el empaque de la tapa de punterías está fugando.", "foco": ["tapa_punterias"], "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0] } },
+        { "titulo": "Afloja y retira las bujías", "texto": "Con el dado de bujía y la extensión, afloja en sentido contrario a las manecillas. Si se siente muy dura, detente: pon un poco de penetrante, espera y vuelve a intentar. Nunca fuerces.", "foco": ["bujias"], "rayosX": true, "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0], "bujias": [0, 0.12, 0] } },
+        { "titulo": "Revisa la calibración", "texto": "Las bujías de iridio vienen calibradas de fábrica. Solo comprueba con calibrador de alambre; si hay que ajustar, dobla el electrodo de tierra con cuidado, nunca toques la punta central de iridio.", "foco": ["bujias"], "rayosX": true, "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0], "bujias": [0, 0.12, 0] }, "advertencia": "No uses calibrador de laminillas planas en bujías de iridio: puede dañar la punta." },
+        { "titulo": "Instala las bujías nuevas", "texto": "Enróscalas a mano las primeras vueltas (si entra chueca, sácala y vuelve a empezar). Luego aprieta con torquímetro al valor de la especificación. No pongas antiadherente si la bujía ya trae recubrimiento.", "foco": ["bujias"], "rayosX": true, "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0] } },
+        { "titulo": "Reinstala bobinas y conectores", "texto": "Pon una capa delgada de grasa dieléctrica dentro del capuchón de cada bobina, instálalas, aprieta sus tornillos y conecta hasta oír el clic.", "foco": ["bobinas", "arnes_bobinas"] },
+        { "titulo": "Prueba", "texto": "Enciende el motor: debe quedar en marcha pareja. Si el testigo de check engine parpadea, revisa que todos los conectores estén bien puestos.", "foco": ["bobinas"] }
+      ]
+    },
+    {
+      "id": "cambiar_bobina",
+      "titulo": "Cambiar una bobina de encendido",
+      "piezas": ["bobinas", "arnes_bobinas"],
+      "dificultad": "Fácil",
+      "tiempo": "15 min",
+      "cuando": "Motor tembloroso con check engine parpadeando y código P0301–P0304 (falla en cilindro 1–4).",
+      "herramientas": [
+        { "nombre": "Dado de 10 mm y matraca", "afiliado": null },
+        { "nombre": "Escáner OBD2 (para leer el código)", "afiliado": "scanner_obd2" }
+      ],
+      "refacciones": ["bobinas", "grasa_dielectrica"],
+      "especificaciones": [
+        { "dato": "Torque tornillo de bobina", "valor": "≈ 7 lb·ft (10 N·m)", "verificado": false }
+      ],
+      "pasos": [
+        { "titulo": "Confirma qué bobina falla", "texto": "Lee el código con un escáner. Truco: intercambia la bobina sospechosa con la de otro cilindro; si la falla se mueve de cilindro, la bobina es la culpable.", "foco": ["bobinas"] },
+        { "titulo": "Desconecta y retira", "texto": "Desconecta el conector, quita el tornillo de 10 mm y saca la bobina girándola un poco.", "foco": ["bobinas"], "mover": { "arnes_bobinas": [0, 0.14, 0.05], "bobinas": [0, 0.2, 0] } },
+        { "titulo": "Instala la nueva", "texto": "Grasa dieléctrica en el capuchón, instala, aprieta el tornillo y conecta hasta el clic. Borra el código con el escáner.", "foco": ["bobinas", "arnes_bobinas"] }
+      ]
+    },
+    {
+      "id": "cambio_aceite",
+      "titulo": "Cambio de aceite y filtro",
+      "piezas": ["filtro_aceite", "carter"],
+      "dificultad": "Fácil",
+      "tiempo": "40 min",
+      "cuando": "Cada 8,000–12,000 km o 6 meses; uso severo (tráfico, calor, terracería) cada 5,000 km.",
+      "herramientas": [
+        { "nombre": "Llave para filtro de aceite", "afiliado": "llave_filtro_aceite" },
+        { "nombre": "Llave o dado para el tapón del cárter (17 mm aprox.)", "afiliado": null },
+        { "nombre": "Charola para aceite usado y embudo", "afiliado": null },
+        { "nombre": "Torquímetro", "afiliado": "torquimetro" }
+      ],
+      "refacciones": ["aceite_sintetico", "filtro_aceite", "arandela_carter"],
+      "especificaciones": [
+        { "dato": "Aceite", "valor": "5W-20", "verificado": false },
+        { "dato": "Capacidad con filtro", "valor": "≈ 4.8 cuartos (≈ 4.5 L)", "verificado": false },
+        { "dato": "Torque tapón del cárter", "valor": "25–30 lb·ft (35–40 N·m)", "verificado": false },
+        { "dato": "Filtro", "valor": "A mano: 3/4 de vuelta después de que asiente el empaque", "verificado": false }
+      ],
+      "pasos": [
+        { "titulo": "Calienta y estaciona", "texto": "Deja el motor encendido 2–3 minutos para que el aceite fluya mejor (tibio, no hirviendo). Apágalo en piso plano y quita el tapón de llenado de la tapa de punterías.", "foco": ["tapa_punterias"] },
+        { "titulo": "Drena el cárter", "texto": "Debajo del motor, afloja el tapón del cárter con la charola debajo. Deja escurrir 10 minutos. Pon arandela nueva al tapón y apriétalo al torque.", "foco": ["carter"], "vista": [0.8, 0.25, 0.6] },
+        { "titulo": "Quita el filtro viejo", "texto": "Afloja el filtro con la llave especial. Revisa que el empaque viejo salga con el filtro y no quede pegado al motor.", "foco": ["filtro_aceite"], "mover": { "filtro_aceite": [0.16, 0, 0] }, "vista": [1, 0.4, 0.2] },
+        { "titulo": "Instala el filtro nuevo", "texto": "Unta aceite limpio en el empaque del filtro nuevo, enróscalo a mano hasta que asiente y dale 3/4 de vuelta más. No uses la llave para apretar.", "foco": ["filtro_aceite"], "vista": [1, 0.4, 0.2] },
+        { "titulo": "Llena y revisa", "texto": "Agrega casi toda la capacidad, enciende 1 minuto, apaga, espera 5 minutos y mide con la bayoneta. Completa hasta la marca superior. Revisa que no gotee el tapón ni el filtro.", "foco": ["tapa_punterias", "filtro_aceite"] }
+      ]
+    },
+    {
+      "id": "cambiar_filtro_aire",
+      "titulo": "Cambiar filtro de aire",
+      "piezas": ["filtro_aire"],
+      "dificultad": "Muy fácil",
+      "tiempo": "10 min",
+      "cuando": "Cada 15,000–20,000 km, antes si manejas en terracería.",
+      "herramientas": [{ "nombre": "Ninguna (clips) o desarmador", "afiliado": null }],
+      "refacciones": ["filtro_aire"],
+      "especificaciones": [],
+      "pasos": [
+        { "titulo": "Ubica la caja del filtro", "texto": "Es la caja negra de plástico a un lado del motor, conectada al cuerpo de aceleración con una manguera.", "foco": ["filtro_aire"] },
+        { "titulo": "Abre la tapa", "texto": "Suelta los clips y levanta la tapa. No es necesario desconectar el sensor de flujo de aire.", "foco": ["filtro_aire"], "mover": { "filtro_aire": [0, 0.16, 0] } },
+        { "titulo": "Cambia el filtro", "texto": "Saca el filtro viejo, limpia el polvo de la caja con un trapo y coloca el nuevo con el lado de hule bien asentado. Cierra los clips parejo.", "foco": ["filtro_aire"] }
+      ]
+    },
+    {
+      "id": "cambiar_banda",
+      "titulo": "Cambiar banda de accesorios",
+      "piezas": ["banda_accesorios", "alternador", "compresor_ac", "bomba_agua"],
+      "dificultad": "Media",
+      "tiempo": "30–45 min",
+      "cuando": "Si rechina, tiene grietas o le faltan pedazos; revisión cada 20,000 km.",
+      "herramientas": [
+        { "nombre": "Llave o matraca para el tensor (tamaño según tu tensor)", "afiliado": null },
+        { "nombre": "Foto o diagrama del recorrido de la banda", "afiliado": null }
+      ],
+      "refacciones": ["banda_accesorios"],
+      "especificaciones": [{ "dato": "Tensión", "valor": "Automática (tensor de resorte): no requiere ajuste", "verificado": false }],
+      "pasos": [
+        { "titulo": "Toma foto del recorrido", "texto": "Antes de quitar nada, toma una foto de cómo pasa la banda por cada polea: cigüeñal, bomba de agua, alternador, compresor de A/C y tensor.", "foco": ["banda_accesorios"], "vista": [0.3, 0.5, 1] },
+        { "titulo": "Libera el tensor y saca la banda", "texto": "Gira el tensor con la llave para aflojar la banda y sácala primero de la polea más fácil (normalmente la de arriba).", "foco": ["banda_accesorios"], "mover": { "banda_accesorios": [0, 0, 0.12] }, "vista": [0.3, 0.5, 1] },
+        { "titulo": "Revisa poleas", "texto": "Gira cada polea con la mano: deben girar sin ruido ni juego. Una polea que suena es la causa típica de que una banda nueva se dañe rápido.", "foco": ["alternador", "bomba_agua", "compresor_ac"], "mover": { "banda_accesorios": [0, 0, 0.12] }, "vista": [0.3, 0.5, 1] },
+        { "titulo": "Instala la banda nueva", "texto": "Pásala según la foto, libera el tensor despacio y verifica que las canales de la banda asienten en todas las poleas. Enciende y observa unos segundos.", "foco": ["banda_accesorios"], "vista": [0.3, 0.5, 1] }
+      ]
+    },
+    {
+      "id": "cambiar_termostato",
+      "titulo": "Cambiar termostato",
+      "piezas": ["termostato"],
+      "dificultad": "Media",
+      "tiempo": "1–1.5 h",
+      "cuando": "Si el motor se calienta de más, tarda mucho en calentar o la calefacción sale tibia.",
+      "herramientas": [
+        { "nombre": "Dado de 10/12 mm y matraca", "afiliado": null },
+        { "nombre": "Pinzas para abrazaderas de manguera", "afiliado": null },
+        { "nombre": "Charola y embudo", "afiliado": null }
+      ],
+      "refacciones": ["termostato", "anticongelante"],
+      "especificaciones": [
+        { "dato": "Temperatura de apertura", "valor": "≈ 88–90 °C", "verificado": false },
+        { "dato": "Anticongelante", "valor": "Tipo de larga duración compatible con aluminio (verifica la especificación)", "verificado": false }
+      ],
+      "pasos": [
+        { "titulo": "Motor frío y drenado parcial", "texto": "Nunca abras el sistema caliente. Drena anticongelante por el radiador hasta que el nivel quede abajo de la carcasa del termostato.", "foco": ["termostato"], "advertencia": "El anticongelante es tóxico y dulce: no lo dejes al alcance de niños ni mascotas." },
+        { "titulo": "Retira la carcasa", "texto": "Afloja la abrazadera de la manguera, retírala y quita los tornillos de la carcasa del termostato.", "foco": ["termostato"], "mover": { "termostato": [0, 0, -0.12] } },
+        { "titulo": "Cambia termostato y empaque", "texto": "Fíjate en la orientación del termostato viejo (la válvula de purga va hacia arriba) e instala el nuevo con empaque nuevo.", "foco": ["termostato"], "mover": { "termostato": [0, 0, -0.12] } },
+        { "titulo": "Rellena y purga el aire", "texto": "Reinstala la carcasa, llena con anticongelante y enciende con el tapón abierto y la calefacción al máximo hasta que dejen de salir burbujas. Revisa el nivel de nuevo en frío.", "foco": ["termostato"] }
+      ]
+    },
+    {
+      "id": "limpiar_cuerpo_aceleracion",
+      "titulo": "Limpiar cuerpo de aceleración",
+      "piezas": ["cuerpo_aceleracion"],
+      "dificultad": "Fácil",
+      "tiempo": "30 min",
+      "cuando": "Ralentí inestable o que se apaga al detenerte; cada 40,000 km aprox.",
+      "herramientas": [
+        { "nombre": "Desarmador / dado según abrazadera", "afiliado": null },
+        { "nombre": "Trapo sin pelusa", "afiliado": null }
+      ],
+      "refacciones": ["limpiador_cuerpo_aceleracion"],
+      "especificaciones": [],
+      "pasos": [
+        { "titulo": "Quita la manguera de admisión", "texto": "Con el motor apagado y la llave fuera, afloja la abrazadera y retira la manguera que viene de la caja del filtro.", "foco": ["cuerpo_aceleracion", "filtro_aire"], "mover": { "filtro_aire": [0, 0.12, -0.08] } },
+        { "titulo": "Limpia", "texto": "Rocía el limpiador en un trapo (no directo al conector eléctrico) y limpia el carbón del borde de la mariposa y del cuerpo.", "foco": ["cuerpo_aceleracion"], "mover": { "filtro_aire": [0, 0.12, -0.08] }, "advertencia": "Es un cuerpo electrónico: no fuerces la mariposa con la mano ni lo hagas con la llave en ON." },
+        { "titulo": "Arma y reaprende el ralentí", "texto": "Reinstala la manguera. Enciende y deja el motor en ralentí 10 minutos sin tocar el acelerador ni el A/C para que la computadora reaprenda.", "foco": ["cuerpo_aceleracion"] }
+      ]
+    }
+  ]
+}
