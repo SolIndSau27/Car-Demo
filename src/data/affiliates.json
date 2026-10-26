@@ -1,0 +1,1165 @@
+{
+  "nota": "Precios aproximados en MXN, solo como referencia. url_base son búsquedas; cámbialas por productos específicos cuando los tengas. tag_afiliado vacío = usa el de .env.",
+  "aviso": "Este link puede generarnos una comisión sin costo extra para ti",
+  "tiendas": {
+    "mercadolibre": {
+      "nombre": "Mercado Libre",
+      "param": "matt_tool",
+      "env": "VITE_ML_AFFILIATE_TAG"
+    },
+    "amazon": {
+      "nombre": "Amazon México",
+      "param": "tag",
+      "env": "VITE_AMAZON_TAG"
+    }
+  },
+  "piezas": {
+    "monoblock": {
+      "titulo": "Monoblock 2.4 GDI",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Monoblock 2.4 GDI",
+          "url_base": "https://listado.mercadolibre.com.mx/monoblock-2.4-gdi-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 28000
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Monoblock 2.4 GDI",
+          "url_base": "https://www.amazon.com.mx/s?k=monoblock+2.4+gdi+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 30240
+        }
+      ]
+    },
+    "cabeza": {
+      "titulo": "Cabeza de motor 2.4 GDI",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Cabeza de motor 2.4 GDI",
+          "url_base": "https://listado.mercadolibre.com.mx/cabeza-motor-2.4-gdi-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 14500
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Cabeza de motor 2.4 GDI",
+          "url_base": "https://www.amazon.com.mx/s?k=cabeza+motor+2.4+gdi+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 15660
+        }
+      ]
+    },
+    "tapa_punterias": {
+      "titulo": "Tapa de punterías con empaque",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Tapa de punterías con empaque",
+          "url_base": "https://listado.mercadolibre.com.mx/tapa-punterias-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2400
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Tapa de punterías con empaque",
+          "url_base": "https://www.amazon.com.mx/s?k=tapa+punterias+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2590
+        }
+      ]
+    },
+    "pistones": {
+      "titulo": "Juego de pistones con anillos",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de pistones con anillos",
+          "url_base": "https://listado.mercadolibre.com.mx/pistones-anillos-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 6800
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de pistones con anillos",
+          "url_base": "https://www.amazon.com.mx/s?k=pistones+anillos+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 7340
+        }
+      ]
+    },
+    "bielas": {
+      "titulo": "Juego de bielas",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de bielas",
+          "url_base": "https://listado.mercadolibre.com.mx/bielas-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 7500
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de bielas",
+          "url_base": "https://www.amazon.com.mx/s?k=bielas+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 8100
+        }
+      ]
+    },
+    "ciguenal": {
+      "titulo": "Cigüeñal 2.4",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Cigüeñal 2.4",
+          "url_base": "https://listado.mercadolibre.com.mx/cigueñal-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 9800
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Cigüeñal 2.4",
+          "url_base": "https://www.amazon.com.mx/s?k=cigueñal+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 10580
+        }
+      ]
+    },
+    "arboles_levas": {
+      "titulo": "Árbol de levas",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Árbol de levas",
+          "url_base": "https://listado.mercadolibre.com.mx/arbol-de-levas-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4200
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Árbol de levas",
+          "url_base": "https://www.amazon.com.mx/s?k=arbol+de+levas+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4540
+        }
+      ]
+    },
+    "valvulas": {
+      "titulo": "Juego de válvulas admisión/escape",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de válvulas admisión/escape",
+          "url_base": "https://listado.mercadolibre.com.mx/valvulas-admision-escape-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de válvulas admisión/escape",
+          "url_base": "https://www.amazon.com.mx/s?k=valvulas+admision+escape+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3130
+        }
+      ]
+    },
+    "cadena_distribucion": {
+      "titulo": "Kit de cadena de distribución",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Kit de cadena de distribución",
+          "url_base": "https://listado.mercadolibre.com.mx/kit-cadena-distribucion-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3600
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Kit de cadena de distribución",
+          "url_base": "https://www.amazon.com.mx/s?k=kit+cadena+distribucion+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3890
+        }
+      ]
+    },
+    "bomba_aceite": {
+      "titulo": "Bomba de aceite",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Bomba de aceite",
+          "url_base": "https://listado.mercadolibre.com.mx/bomba-de-aceite-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3200
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Bomba de aceite",
+          "url_base": "https://www.amazon.com.mx/s?k=bomba+de+aceite+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3460
+        }
+      ]
+    },
+    "carter": {
+      "titulo": "Cárter de aceite",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Cárter de aceite",
+          "url_base": "https://listado.mercadolibre.com.mx/carter-aceite-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2100
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Cárter de aceite",
+          "url_base": "https://www.amazon.com.mx/s?k=carter+aceite+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2270
+        }
+      ]
+    },
+    "bomba_agua": {
+      "titulo": "Bomba de agua",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Bomba de agua",
+          "url_base": "https://listado.mercadolibre.com.mx/bomba-de-agua-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1250
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Bomba de agua",
+          "url_base": "https://www.amazon.com.mx/s?k=bomba+de+agua+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1350
+        }
+      ]
+    },
+    "termostato": {
+      "titulo": "Termostato con carcasa",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Termostato con carcasa",
+          "url_base": "https://listado.mercadolibre.com.mx/termostato-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 850
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Termostato con carcasa",
+          "url_base": "https://www.amazon.com.mx/s?k=termostato+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 920
+        }
+      ]
+    },
+    "multiple_admision": {
+      "titulo": "Múltiple de admisión",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Múltiple de admisión",
+          "url_base": "https://listado.mercadolibre.com.mx/multiple-admision-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 5200
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Múltiple de admisión",
+          "url_base": "https://www.amazon.com.mx/s?k=multiple+admision+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 5620
+        }
+      ]
+    },
+    "cuerpo_aceleracion": {
+      "titulo": "Cuerpo de aceleración electrónico",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Cuerpo de aceleración electrónico",
+          "url_base": "https://listado.mercadolibre.com.mx/cuerpo-de-aceleracion-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Cuerpo de aceleración electrónico",
+          "url_base": "https://www.amazon.com.mx/s?k=cuerpo+de+aceleracion+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4210
+        }
+      ]
+    },
+    "inyectores": {
+      "titulo": "Inyector de inyección directa (pieza)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Inyector de inyección directa (pieza)",
+          "url_base": "https://listado.mercadolibre.com.mx/inyector-gdi-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2300
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Inyector de inyección directa (pieza)",
+          "url_base": "https://www.amazon.com.mx/s?k=inyector+gdi+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2480
+        }
+      ]
+    },
+    "bomba_alta_presion": {
+      "titulo": "Bomba de gasolina de alta presión",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Bomba de gasolina de alta presión",
+          "url_base": "https://listado.mercadolibre.com.mx/bomba-alta-presion-gasolina-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 5600
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Bomba de gasolina de alta presión",
+          "url_base": "https://www.amazon.com.mx/s?k=bomba+alta+presion+gasolina+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 6050
+        }
+      ]
+    },
+    "bobinas": {
+      "titulo": "Bobina de encendido (pieza)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Bobina de encendido (pieza)",
+          "url_base": "https://listado.mercadolibre.com.mx/bobina-encendido-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 780
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Bobina de encendido (pieza)",
+          "url_base": "https://www.amazon.com.mx/s?k=bobina+encendido+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 840
+        }
+      ]
+    },
+    "bujias": {
+      "titulo": "Juego de 4 bujías de iridio",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de 4 bujías de iridio",
+          "url_base": "https://listado.mercadolibre.com.mx/bujias-iridio-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1100
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de 4 bujías de iridio",
+          "url_base": "https://www.amazon.com.mx/s?k=bujias+iridio+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1190
+        }
+      ]
+    },
+    "alternador": {
+      "titulo": "Alternador",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Alternador",
+          "url_base": "https://listado.mercadolibre.com.mx/alternador-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4300
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Alternador",
+          "url_base": "https://www.amazon.com.mx/s?k=alternador+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4640
+        }
+      ]
+    },
+    "marcha": {
+      "titulo": "Marcha (motor de arranque)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Marcha (motor de arranque)",
+          "url_base": "https://listado.mercadolibre.com.mx/marcha-motor-arranque-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Marcha (motor de arranque)",
+          "url_base": "https://www.amazon.com.mx/s?k=marcha+motor+arranque+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3130
+        }
+      ]
+    },
+    "compresor_ac": {
+      "titulo": "Compresor de A/C",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Compresor de A/C",
+          "url_base": "https://listado.mercadolibre.com.mx/compresor-aire-acondicionado-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 6500
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Compresor de A/C",
+          "url_base": "https://www.amazon.com.mx/s?k=compresor+aire+acondicionado+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 7020
+        }
+      ]
+    },
+    "banda_accesorios": {
+      "titulo": "Banda de accesorios",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Banda de accesorios",
+          "url_base": "https://listado.mercadolibre.com.mx/banda-accesorios-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Banda de accesorios",
+          "url_base": "https://www.amazon.com.mx/s?k=banda+accesorios+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 490
+        }
+      ]
+    },
+    "filtro_aceite": {
+      "titulo": "Filtro de aceite",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Filtro de aceite",
+          "url_base": "https://listado.mercadolibre.com.mx/filtro-de-aceite-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 160
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Filtro de aceite",
+          "url_base": "https://www.amazon.com.mx/s?k=filtro+de+aceite+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 170
+        }
+      ]
+    },
+    "filtro_aire": {
+      "titulo": "Filtro de aire de motor",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Filtro de aire de motor",
+          "url_base": "https://listado.mercadolibre.com.mx/filtro-de-aire-motor-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 290
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Filtro de aire de motor",
+          "url_base": "https://www.amazon.com.mx/s?k=filtro+de+aire+motor+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 310
+        }
+      ]
+    },
+    "sensor_oxigeno": {
+      "titulo": "Sensor de oxígeno",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Sensor de oxígeno",
+          "url_base": "https://listado.mercadolibre.com.mx/sensor-de-oxigeno-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1200
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Sensor de oxígeno",
+          "url_base": "https://www.amazon.com.mx/s?k=sensor+de+oxigeno+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1300
+        }
+      ]
+    },
+    "multiple_escape": {
+      "titulo": "Múltiple de escape",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Múltiple de escape",
+          "url_base": "https://listado.mercadolibre.com.mx/multiple-de-escape-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 6900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Múltiple de escape",
+          "url_base": "https://www.amazon.com.mx/s?k=multiple+de+escape+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 7450
+        }
+      ]
+    },
+    "rin": {
+      "titulo": "Juego de 4 rines R{diametro} 5x114.3",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de 4 rines R{diametro} 5x114.3",
+          "url_base": "https://listado.mercadolibre.com.mx/rines-{diametro}-5x114.3",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 12000
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de 4 rines R{diametro} 5x114.3",
+          "url_base": "https://www.amazon.com.mx/s?k=rines+{diametro}+5x114.3",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 12960
+        }
+      ]
+    },
+    "llanta": {
+      "titulo": "Llanta {medida} (pieza)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Llanta {medida} (pieza)",
+          "url_base": "https://listado.mercadolibre.com.mx/llanta-{medida}",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2300
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Llanta {medida} (pieza)",
+          "url_base": "https://www.amazon.com.mx/s?k=llanta+{medida}",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2480
+        }
+      ]
+    },
+    "birlos": {
+      "titulo": "Juego de tuercas M12x1.5",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de tuercas M12x1.5",
+          "url_base": "https://listado.mercadolibre.com.mx/tuercas-birlos-m12x1.5-cono",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 380
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de tuercas M12x1.5",
+          "url_base": "https://www.amazon.com.mx/s?k=tuercas+birlos+m12x1.5+cono",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 410
+        }
+      ]
+    },
+    "tuercas_seguridad": {
+      "titulo": "Tuercas de seguridad con llave",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Tuercas de seguridad con llave",
+          "url_base": "https://listado.mercadolibre.com.mx/tuercas-seguridad-m12x1.5",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 420
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Tuercas de seguridad con llave",
+          "url_base": "https://www.amazon.com.mx/s?k=tuercas+seguridad+m12x1.5",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        }
+      ]
+    },
+    "sensor_tpms": {
+      "titulo": "Sensor TPMS (pieza)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Sensor TPMS (pieza)",
+          "url_base": "https://listado.mercadolibre.com.mx/sensor-tpms-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 650
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Sensor TPMS (pieza)",
+          "url_base": "https://www.amazon.com.mx/s?k=sensor+tpms+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 700
+        }
+      ]
+    },
+    "valvulas_llanta": {
+      "titulo": "Válvulas para llanta (juego de 4)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Válvulas para llanta (juego de 4)",
+          "url_base": "https://listado.mercadolibre.com.mx/valvulas-llanta-tr414",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 90
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Válvulas para llanta (juego de 4)",
+          "url_base": "https://www.amazon.com.mx/s?k=valvulas+llanta+tr414",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 100
+        }
+      ]
+    },
+    "alineacion_balanceo": {
+      "titulo": "Alineación y balanceo",
+      "tipo": "servicio",
+      "productos": [],
+      "precio_aprox_mxn": 650,
+      "nota": "Servicio de taller. En la fase 2 se podrá cotizar con talleres de tu ciudad."
+    },
+    "vinil_wrap": {
+      "titulo": "Vinil para auto (wrap)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Vinil para auto (wrap)",
+          "url_base": "https://listado.mercadolibre.com.mx/vinil-wrap-auto-rollo",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3800
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Vinil para auto (wrap)",
+          "url_base": "https://www.amazon.com.mx/s?k=vinil+wrap+auto+rollo",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4100
+        }
+      ]
+    },
+    "cera_sellador": {
+      "titulo": "Sellador / cera de pintura",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Sellador / cera de pintura",
+          "url_base": "https://listado.mercadolibre.com.mx/sellador-pintura-auto",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Sellador / cera de pintura",
+          "url_base": "https://www.amazon.com.mx/s?k=sellador+pintura+auto",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 490
+        }
+      ]
+    },
+    "fascia_estandar": {
+      "titulo": "Fascia delantera",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Fascia delantera",
+          "url_base": "https://listado.mercadolibre.com.mx/fascia-delantera-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3500
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Fascia delantera",
+          "url_base": "https://www.amazon.com.mx/s?k=fascia+delantera+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3780
+        }
+      ]
+    },
+    "fascia_deportiva": {
+      "titulo": "Fascia / kit deportivo delantero",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Fascia / kit deportivo delantero",
+          "url_base": "https://listado.mercadolibre.com.mx/fascia-deportiva-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 5200
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Fascia / kit deportivo delantero",
+          "url_base": "https://www.amazon.com.mx/s?k=fascia+deportiva+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 5620
+        }
+      ]
+    },
+    "fascia_touring": {
+      "titulo": "Fascia delantera con barras",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Fascia delantera con barras",
+          "url_base": "https://listado.mercadolibre.com.mx/fascia-delantera-sonata-2016-niebla",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4600
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Fascia delantera con barras",
+          "url_base": "https://www.amazon.com.mx/s?k=fascia+delantera+sonata+2016+niebla",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4970
+        }
+      ]
+    },
+    "grapas_fascia": {
+      "titulo": "Kit de grapas para fascia",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Kit de grapas para fascia",
+          "url_base": "https://listado.mercadolibre.com.mx/kit-grapas-fascia-hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 180
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Kit de grapas para fascia",
+          "url_base": "https://www.amazon.com.mx/s?k=kit+grapas+fascia+hyundai",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 190
+        }
+      ]
+    },
+    "faros_niebla": {
+      "titulo": "Faros de niebla con arnés",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Faros de niebla con arnés",
+          "url_base": "https://listado.mercadolibre.com.mx/faros-niebla-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1400
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Faros de niebla con arnés",
+          "url_base": "https://www.amazon.com.mx/s?k=faros+niebla+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1510
+        }
+      ]
+    },
+    "fender_estandar": {
+      "titulo": "Salpicadera delantera",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Salpicadera delantera",
+          "url_base": "https://listado.mercadolibre.com.mx/salpicadera-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2600
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Salpicadera delantera",
+          "url_base": "https://www.amazon.com.mx/s?k=salpicadera+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2810
+        }
+      ]
+    },
+    "fender_ensanchado": {
+      "titulo": "Extensiones de salpicadera (flares)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Extensiones de salpicadera (flares)",
+          "url_base": "https://listado.mercadolibre.com.mx/extensiones-salpicadera-flares-universales",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Extensiones de salpicadera (flares)",
+          "url_base": "https://www.amazon.com.mx/s?k=extensiones+salpicadera+flares+universales",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2050
+        }
+      ]
+    },
+    "fender_ventilado": {
+      "titulo": "Ventila decorativa para salpicadera",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Ventila decorativa para salpicadera",
+          "url_base": "https://listado.mercadolibre.com.mx/ventila-decorativa-salpicadera-auto",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 350
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Ventila decorativa para salpicadera",
+          "url_base": "https://www.amazon.com.mx/s?k=ventila+decorativa+salpicadera+auto",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 380
+        }
+      ]
+    },
+    "aleron_labio": {
+      "titulo": "Alerón tipo labio",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Alerón tipo labio",
+          "url_base": "https://listado.mercadolibre.com.mx/aleron-cajuela-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1300
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Alerón tipo labio",
+          "url_base": "https://www.amazon.com.mx/s?k=aleron+cajuela+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1400
+        }
+      ]
+    },
+    "aleron_ala": {
+      "titulo": "Alerón tipo ala",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Alerón tipo ala",
+          "url_base": "https://listado.mercadolibre.com.mx/aleron-sedan-universal-ala",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2400
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Alerón tipo ala",
+          "url_base": "https://www.amazon.com.mx/s?k=aleron+sedan+universal+ala",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2590
+        }
+      ]
+    },
+    "resortes_cortos": {
+      "titulo": "Resortes cortos -30 mm",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Resortes cortos -30 mm",
+          "url_base": "https://listado.mercadolibre.com.mx/resortes-cortos-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Resortes cortos -30 mm",
+          "url_base": "https://www.amazon.com.mx/s?k=resortes+cortos+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 4210
+        }
+      ]
+    },
+    "coilovers": {
+      "titulo": "Kit de coilovers",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Kit de coilovers",
+          "url_base": "https://listado.mercadolibre.com.mx/coilovers-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 14500
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Kit de coilovers",
+          "url_base": "https://www.amazon.com.mx/s?k=coilovers+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 15660
+        }
+      ]
+    },
+    "filtro_alto_flujo": {
+      "titulo": "Filtro de aire de alto flujo",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Filtro de aire de alto flujo",
+          "url_base": "https://listado.mercadolibre.com.mx/filtro-alto-flujo-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1350
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Filtro de aire de alto flujo",
+          "url_base": "https://www.amazon.com.mx/s?k=filtro+alto+flujo+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1460
+        }
+      ]
+    },
+    "kit_limpieza_filtro": {
+      "titulo": "Kit de limpieza para filtro lavable",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Kit de limpieza para filtro lavable",
+          "url_base": "https://listado.mercadolibre.com.mx/kit-limpieza-filtro-aire-alto-flujo",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 450
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Kit de limpieza para filtro lavable",
+          "url_base": "https://www.amazon.com.mx/s?k=kit+limpieza+filtro+aire+alto+flujo",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 490
+        }
+      ]
+    },
+    "admision_fria": {
+      "titulo": "Kit de admisión de aire frío",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Kit de admisión de aire frío",
+          "url_base": "https://listado.mercadolibre.com.mx/admision-aire-frio-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 2900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Kit de admisión de aire frío",
+          "url_base": "https://www.amazon.com.mx/s?k=admision+aire+frio+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 3130
+        }
+      ]
+    },
+    "escape_cat_back": {
+      "titulo": "Escape cat-back doble salida",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Escape cat-back doble salida",
+          "url_base": "https://listado.mercadolibre.com.mx/escape-cat-back-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 9800
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Escape cat-back doble salida",
+          "url_base": "https://www.amazon.com.mx/s?k=escape+cat+back+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 10580
+        }
+      ]
+    },
+    "empaques_escape": {
+      "titulo": "Empaques y abrazaderas de escape",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Empaques y abrazaderas de escape",
+          "url_base": "https://listado.mercadolibre.com.mx/empaques-abrazaderas-escape",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 300
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Empaques y abrazaderas de escape",
+          "url_base": "https://www.amazon.com.mx/s?k=empaques+abrazaderas+escape",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 320
+        }
+      ]
+    },
+    "grasa_dielectrica": {
+      "titulo": "Grasa dieléctrica",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Grasa dieléctrica",
+          "url_base": "https://listado.mercadolibre.com.mx/grasa-dielectrica",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 150
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Grasa dieléctrica",
+          "url_base": "https://www.amazon.com.mx/s?k=grasa+dielectrica",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 160
+        }
+      ]
+    },
+    "aceite_sintetico": {
+      "titulo": "Aceite sintético 5W-20 (5 cuartos)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Aceite sintético 5W-20 (5 cuartos)",
+          "url_base": "https://listado.mercadolibre.com.mx/aceite-sintetico-5w20-5-cuartos",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 850
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Aceite sintético 5W-20 (5 cuartos)",
+          "url_base": "https://www.amazon.com.mx/s?k=aceite+sintetico+5w20+5+cuartos",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 920
+        }
+      ]
+    },
+    "faros_led": {
+      "titulo": "Focos LED para faro (par)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Focos LED para faro (par)",
+          "url_base": "https://listado.mercadolibre.com.mx/focos-led-faro-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 900
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Focos LED para faro (par)",
+          "url_base": "https://www.amazon.com.mx/s?k=focos+led+faro+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 970
+        }
+      ]
+    },
+    "pastillas_ceramicas": {
+      "titulo": "Balatas cerámicas delanteras",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Balatas cerámicas delanteras",
+          "url_base": "https://listado.mercadolibre.com.mx/balatas-ceramicas-delanteras-sonata-2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 950
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Balatas cerámicas delanteras",
+          "url_base": "https://www.amazon.com.mx/s?k=balatas+ceramicas+delanteras+sonata+2016",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1030
+        }
+      ]
+    },
+    "liquido_frenos": {
+      "titulo": "Líquido de frenos DOT 4",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Líquido de frenos DOT 4",
+          "url_base": "https://listado.mercadolibre.com.mx/liquido-de-frenos-dot-4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 180
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Líquido de frenos DOT 4",
+          "url_base": "https://www.amazon.com.mx/s?k=liquido+de+frenos+dot+4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 190
+        }
+      ]
+    }
+  }
+}

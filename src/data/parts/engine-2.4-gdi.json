@@ -1,0 +1,224 @@
+{
+  "id": "engine-2.4-gdi",
+  "nombre": "Motor 2.4L GDI, 4 cilindros en línea",
+  "aviso": "Información general de referencia. Verifica en tu manual de propietario o de servicio.",
+  "verificado": false,
+  "piezas": [
+    {
+      "id": "monoblock", "nombre": "Monoblock (bloque del motor)", "categoria": "Estructura", "cantidad": 1, "interna": false,
+      "explosion": [0, 0, 0],
+      "funcion": "Es la estructura principal del motor: aloja los cilindros, el cigüeñal y los conductos de aceite y refrigerante.",
+      "como_funciona": "Los pistones suben y bajan dentro de sus cilindros. Por sus paredes circulan aceite y anticongelante para lubricar y enfriar.",
+      "sintomas": ["Fugas de aceite o anticongelante por el bloque", "Humo blanco constante (posible fisura)", "Mezcla de aceite y anticongelante"],
+      "mantenimiento": "No tiene mantenimiento propio; protégelo con aceite y anticongelante en buen estado."
+    },
+    {
+      "id": "cabeza", "nombre": "Cabeza del motor (culata)", "categoria": "Estructura", "cantidad": 1, "interna": false,
+      "explosion": [0, 0.3, 0],
+      "funcion": "Cierra los cilindros por arriba y aloja válvulas, árboles de levas, inyectores y bujías.",
+      "como_funciona": "Forma la cámara de combustión. Sus conductos dejan entrar el aire y salir los gases de escape cuando abren las válvulas.",
+      "sintomas": ["Sobrecalentamiento", "Pérdida de anticongelante sin fuga visible", "Junta de cabeza dañada: humo blanco o burbujas en el radiador"],
+      "mantenimiento": null
+    },
+    {
+      "id": "tapa_punterias", "nombre": "Tapa de punterías", "categoria": "Estructura", "cantidad": 1, "interna": false,
+      "explosion": [0, 0.62, 0],
+      "funcion": "Tapa la parte superior de la cabeza y mantiene el aceite dentro.",
+      "como_funciona": "Sella con un empaque de hule sobre la cabeza. Incluye la ventilación del cárter (PCV).",
+      "sintomas": ["Fuga de aceite alrededor de la tapa", "Olor a aceite quemado sobre el escape", "Aceite en los pozos de las bujías"],
+      "mantenimiento": "Cambia el empaque cuando haya fuga o al hacer afinación mayor."
+    },
+    {
+      "id": "pistones", "nombre": "Pistones", "categoria": "Móviles", "cantidad": 4, "interna": true,
+      "explosion": [0.45, 0.16, 0],
+      "funcion": "Reciben la fuerza de la combustión y la convierten en movimiento.",
+      "como_funciona": "La mezcla de aire y gasolina explota encima del pistón y lo empuja hacia abajo. Sus anillos sellan contra el cilindro.",
+      "sintomas": ["Consumo de aceite alto", "Humo azul por el escape", "Baja compresión o golpeteo"],
+      "mantenimiento": null
+    },
+    {
+      "id": "bielas", "nombre": "Bielas", "categoria": "Móviles", "cantidad": 4, "interna": true,
+      "explosion": [0.45, -0.02, 0],
+      "funcion": "Unen cada pistón con el cigüeñal.",
+      "como_funciona": "Transmiten el empuje del pistón al cigüeñal y convierten el movimiento de sube y baja en giro.",
+      "sintomas": ["Golpeteo metálico fuerte desde abajo del motor", "Baja presión de aceite"],
+      "mantenimiento": null
+    },
+    {
+      "id": "ciguenal", "nombre": "Cigüeñal", "categoria": "Móviles", "cantidad": 1, "interna": true,
+      "explosion": [0.45, -0.26, 0],
+      "funcion": "Convierte el movimiento de los pistones en giro que va a la transmisión.",
+      "como_funciona": "Tiene codos desfasados; cada biela lo empuja en su turno. En un extremo mueve la cadena y la banda de accesorios.",
+      "sintomas": ["Golpeteo grave", "Vibración", "Fuga por los retenes delantero o trasero"],
+      "mantenimiento": null
+    },
+    {
+      "id": "arboles_levas", "nombre": "Árboles de levas (admisión y escape)", "categoria": "Distribución", "cantidad": 2, "interna": true,
+      "explosion": [0, 0.46, 0],
+      "funcion": "Abren y cierran las válvulas en el momento exacto.",
+      "como_funciona": "Giran a la mitad de velocidad del cigüeñal. Sus levas empujan las válvulas. Tienen sincronización variable (CVVT) para ajustar el tiempo.",
+      "sintomas": ["Código de sincronización de levas (check engine)", "Ruido de traqueteo en frío", "Marcha irregular"],
+      "mantenimiento": "Usa el aceite correcto: el sistema de levas variables depende de la presión de aceite."
+    },
+    {
+      "id": "valvulas", "nombre": "Válvulas (16)", "categoria": "Distribución", "cantidad": 1, "interna": true,
+      "explosion": [-0.25, 0.36, 0],
+      "funcion": "Dejan entrar aire al cilindro y salir los gases de escape.",
+      "como_funciona": "Hay 4 por cilindro: 2 de admisión y 2 de escape. Un resorte las cierra y la leva las abre.",
+      "sintomas": ["Baja compresión", "Falla de encendido en un cilindro", "En motores GDI: acumulación de carbón en las válvulas de admisión"],
+      "mantenimiento": "Limpieza de carbón en válvulas de admisión cada 80,000–100,000 km aprox. (motor de inyección directa)."
+    },
+    {
+      "id": "cadena_distribucion", "nombre": "Cadena de distribución", "categoria": "Distribución", "cantidad": 1, "interna": false,
+      "explosion": [0, 0.08, 0.24],
+      "funcion": "Sincroniza el cigüeñal con los árboles de levas.",
+      "como_funciona": "Una cadena metálica conecta los engranes del cigüeñal y de las levas. Un tensor hidráulico la mantiene tensa.",
+      "sintomas": ["Cascabeleo al arrancar en frío", "Códigos de correlación cigüeñal/levas", "Motor que no arranca si brincó"],
+      "mantenimiento": "Diseñada para durar la vida del motor; se cambia si hay ruido o códigos."
+    },
+    {
+      "id": "bomba_aceite", "nombre": "Bomba de aceite", "categoria": "Lubricación", "cantidad": 1, "interna": true,
+      "explosion": [0.12, -0.38, 0.16],
+      "funcion": "Hace circular el aceite a presión por todo el motor.",
+      "como_funciona": "Aspira aceite del cárter y lo manda por el filtro a los cojinetes, levas y tensor.",
+      "sintomas": ["Testigo de presión de aceite encendido", "Ruido de punterías", "Desgaste prematuro"],
+      "mantenimiento": null
+    },
+    {
+      "id": "carter", "nombre": "Cárter", "categoria": "Lubricación", "cantidad": 1, "interna": false,
+      "explosion": [0, -0.32, 0],
+      "funcion": "Es el depósito de aceite en la parte baja del motor.",
+      "como_funciona": "El aceite regresa por gravedad al cárter y de ahí lo toma la bomba. Tiene el tapón de drenado.",
+      "sintomas": ["Manchas de aceite en el piso", "Golpe en un tope: abolladura o fisura"],
+      "mantenimiento": "Cambia la arandela del tapón en cada cambio de aceite."
+    },
+    {
+      "id": "bomba_agua", "nombre": "Bomba de agua", "categoria": "Enfriamiento", "cantidad": 1, "interna": false,
+      "explosion": [0.05, 0.02, 0.42],
+      "funcion": "Hace circular el anticongelante entre el motor y el radiador.",
+      "como_funciona": "La mueve la banda de accesorios. Un impulsor interno empuja el líquido por el bloque y la cabeza.",
+      "sintomas": ["Fuga de anticongelante por el orificio testigo", "Sobrecalentamiento", "Zumbido o juego en la polea"],
+      "mantenimiento": "Revisión cada 100,000 km aprox.; cámbiala si gotea."
+    },
+    {
+      "id": "termostato", "nombre": "Termostato", "categoria": "Enfriamiento", "cantidad": 1, "interna": false,
+      "explosion": [0, 0.12, -0.3],
+      "funcion": "Regula la temperatura del motor.",
+      "como_funciona": "Se mantiene cerrado en frío para que el motor se caliente rápido y abre cerca de 90 °C para mandar líquido al radiador.",
+      "sintomas": ["Temperatura que sube demasiado (atorado cerrado)", "Motor que tarda en calentar y calefacción débil (atorado abierto)"],
+      "mantenimiento": "Cámbialo junto con el anticongelante si tiene más de 100,000 km."
+    },
+    {
+      "id": "multiple_admision", "nombre": "Múltiple de admisión", "categoria": "Admisión", "cantidad": 1, "interna": false,
+      "explosion": [0.6, 0.24, 0],
+      "funcion": "Reparte el aire a los 4 cilindros.",
+      "como_funciona": "Recibe el aire del cuerpo de aceleración en una cámara (pleno) y lo distribuye por conductos iguales a cada cilindro.",
+      "sintomas": ["Fuga de vacío: marcha inestable", "Silbido", "Código de mezcla pobre"],
+      "mantenimiento": null
+    },
+    {
+      "id": "cuerpo_aceleracion", "nombre": "Cuerpo de aceleración", "categoria": "Admisión", "cantidad": 1, "interna": false,
+      "explosion": [0.62, 0.24, -0.16],
+      "funcion": "Controla cuánto aire entra al motor.",
+      "como_funciona": "Es una mariposa movida por un motor eléctrico según el pedal del acelerador (sistema electrónico, sin chicote).",
+      "sintomas": ["Ralentí inestable", "Testigo de check engine", "Respuesta lenta al acelerar"],
+      "mantenimiento": "Limpieza cada 40,000 km aprox. con limpiador específico."
+    },
+    {
+      "id": "inyectores", "nombre": "Inyectores directos", "categoria": "Combustible", "cantidad": 4, "interna": false,
+      "explosion": [0.3, 0.3, 0],
+      "funcion": "Rocían la gasolina directo dentro del cilindro.",
+      "como_funciona": "Trabajan a muy alta presión y la computadora decide cuánto y cuándo inyectar en cada ciclo.",
+      "sintomas": ["Falla de encendido en un cilindro", "Tic-tic fuerte (es normal un ligero tic)", "Mayor consumo"],
+      "mantenimiento": "Usa gasolina de calidad; limpieza o prueba de flujo si hay fallas."
+    },
+    {
+      "id": "bomba_alta_presion", "nombre": "Bomba de combustible de alta presión", "categoria": "Combustible", "cantidad": 1, "interna": false,
+      "explosion": [-0.3, 0.5, -0.1],
+      "funcion": "Eleva la presión de la gasolina para la inyección directa.",
+      "como_funciona": "La mueve una leva del árbol de levas. Toma la gasolina de la bomba del tanque y la sube a muy alta presión hacia el riel.",
+      "sintomas": ["Pérdida de potencia", "Arranque difícil", "Código de presión de riel baja"],
+      "mantenimiento": null
+    },
+    {
+      "id": "bobinas", "nombre": "Bobinas de encendido", "categoria": "Encendido", "cantidad": 4, "interna": false,
+      "explosion": [0, 0.92, 0],
+      "funcion": "Generan el alto voltaje para la chispa de cada bujía.",
+      "como_funciona": "Transforman los 12 V de la batería en miles de volts. Hay una bobina encima de cada bujía.",
+      "sintomas": ["Motor tembloroso", "Check engine parpadeando (falla de encendido)", "Pérdida de potencia"],
+      "mantenimiento": "Revisa sus conectores en cada afinación."
+    },
+    {
+      "id": "bujias", "nombre": "Bujías", "categoria": "Encendido", "cantidad": 4, "interna": true,
+      "explosion": [-0.32, 0.58, 0],
+      "funcion": "Encienden la mezcla de aire y gasolina.",
+      "como_funciona": "La chispa salta entre sus electrodos en el momento exacto que indica la computadora.",
+      "sintomas": ["Arranque difícil", "Falla de encendido", "Mayor consumo de gasolina"],
+      "mantenimiento": "Cambio cada 60,000–100,000 km según el tipo (verifica en tu manual)."
+    },
+    {
+      "id": "alternador", "nombre": "Alternador", "categoria": "Eléctrico", "cantidad": 1, "interna": false,
+      "explosion": [0.12, 0.1, 0.46],
+      "funcion": "Genera electricidad y recarga la batería.",
+      "como_funciona": "La banda lo hace girar; produce corriente para todo el carro mientras el motor está encendido.",
+      "sintomas": ["Testigo de batería encendido", "Luces que bajan de intensidad", "Batería que se descarga"],
+      "mantenimiento": "Revisa el voltaje de carga (≈ 13.8–14.5 V) en cada servicio."
+    },
+    {
+      "id": "marcha", "nombre": "Marcha (motor de arranque)", "categoria": "Eléctrico", "cantidad": 1, "interna": false,
+      "explosion": [-0.3, -0.22, -0.25],
+      "funcion": "Hace girar el motor para que arranque.",
+      "como_funciona": "Un motor eléctrico potente engrana con el volante del motor solo mientras das marcha.",
+      "sintomas": ["Clic sin que gire el motor", "Ruido de engranes al arrancar", "Arranque lento con batería buena"],
+      "mantenimiento": null
+    },
+    {
+      "id": "compresor_ac", "nombre": "Compresor de A/C", "categoria": "Accesorios", "cantidad": 1, "interna": false,
+      "explosion": [0.12, -0.16, 0.46],
+      "funcion": "Comprime el gas refrigerante del aire acondicionado.",
+      "como_funciona": "Lo mueve la banda. Un embrague electromagnético lo conecta solo cuando pides aire frío.",
+      "sintomas": ["El A/C no enfría", "Ruido al encender el A/C", "Embrague que no engancha"],
+      "mantenimiento": "Usa el A/C unos minutos cada semana para mantener lubricados los sellos."
+    },
+    {
+      "id": "banda_accesorios", "nombre": "Banda de accesorios", "categoria": "Accesorios", "cantidad": 1, "interna": false,
+      "explosion": [0, 0, 0.58],
+      "funcion": "Transmite el giro del cigüeñal al alternador, la bomba de agua y el compresor de A/C.",
+      "como_funciona": "Es una banda acanalada (serpentina) con un tensor automático que la mantiene firme.",
+      "sintomas": ["Rechinido al arrancar o al girar el volante", "Grietas en la banda", "Testigo de batería encendido"],
+      "mantenimiento": "Revisión cada 20,000 km; cambio cada 60,000–100,000 km o si está agrietada."
+    },
+    {
+      "id": "filtro_aceite", "nombre": "Filtro de aceite", "categoria": "Lubricación", "cantidad": 1, "interna": false,
+      "explosion": [0.28, -0.12, -0.28],
+      "funcion": "Atrapa las partículas del aceite.",
+      "como_funciona": "Todo el aceite que manda la bomba pasa por su papel filtrante antes de llegar a las piezas del motor.",
+      "sintomas": ["Fuga por el empaque del filtro", "Aceite muy sucio antes de tiempo"],
+      "mantenimiento": "Cámbialo en cada cambio de aceite."
+    },
+    {
+      "id": "filtro_aire", "nombre": "Filtro de aire (caja)", "categoria": "Admisión", "cantidad": 1, "interna": false,
+      "explosion": [0, 0.3, -0.25],
+      "funcion": "Limpia el aire que entra al motor.",
+      "como_funciona": "Está dentro de una caja de plástico; el aire pasa por el papel filtrante y luego por el sensor de flujo hacia el cuerpo de aceleración.",
+      "sintomas": ["Pérdida de potencia", "Mayor consumo", "Filtro visiblemente sucio"],
+      "mantenimiento": "Cambio cada 15,000–20,000 km (antes si manejas en terracería)."
+    },
+    {
+      "id": "sensor_oxigeno", "nombre": "Sensor de oxígeno", "categoria": "Escape", "cantidad": 1, "interna": false,
+      "explosion": [-0.55, -0.1, 0.05],
+      "funcion": "Mide el oxígeno en los gases de escape.",
+      "como_funciona": "Con su lectura, la computadora ajusta la mezcla de aire y gasolina para gastar menos y contaminar menos.",
+      "sintomas": ["Check engine encendido", "Mayor consumo", "No pasar la verificación"],
+      "mantenimiento": "Revisión con escáner; vida típica de 100,000–150,000 km."
+    },
+    {
+      "id": "multiple_escape", "nombre": "Múltiple de escape", "categoria": "Escape", "cantidad": 1, "interna": false,
+      "explosion": [-0.42, 0, 0],
+      "funcion": "Junta los gases de escape de los 4 cilindros.",
+      "como_funciona": "Lleva los gases calientes hacia el catalizador. En este motor está integrado con un precatalizador.",
+      "sintomas": ["Ruido de fuga (tic) en frío", "Olor a gases en cabina", "Pernos rotos"],
+      "mantenimiento": null
+    }
+  ]
+}
