@@ -6,13 +6,11 @@
   "motor": "2.4L GDI, 4 cilindros en línea",
   "partes_motor": "engine-2.4-gdi",
   "aviso_verificacion": "Verifica en tu manual de propietario",
-
   "modelo": {
     "tipo": "procedural",
     "glb_url": null,
     "nota": "Para usar un .glb con licencia: cambia tipo a 'glb', pon glb_url y nombra los nodos igual que los ids de 'piezas_carroceria' y del archivo de partes del motor."
   },
-
   "dimensiones": {
     "verificado": false,
     "largo_m": 4.855,
@@ -23,83 +21,308 @@
     "media_trocha_m": 0.78,
     "radio_arco_m": 0.4
   },
-
   "silueta": {
-    "nota": "Puntos (x, y) en metros del perfil lateral para el modelo procedural. +x = frente, y = altura desde el piso.",
+    "nota": "Perfiles en metros para el modelo procedural (+x = frente, y = altura desde el piso). centro = línea central superior (cofre, parabrisas, techo, medallón, cajuela); cintura = borde superior del costado; media_anchura = medio ancho máximo; estribo = altura del estribo.",
     "frente_x": 2.43,
     "trasera_x": -2.43,
-    "piso_y": 0.22,
-    "cintura": [[0.98, 0.955], [-0.95, 0.99], [-1.72, 1.03]],
-    "techo": [[0.98, 0.955], [0.05, 1.42], [-0.4, 1.455], [-0.9, 1.415], [-1.3, 1.26], [-1.72, 1.03]],
-    "cofre": { "x_frente": 2.2, "y_frente": 0.77, "x_atras": 0.98, "y_atras": 0.945 },
-    "cajuela": { "x_frente": -1.72, "y_frente": 1.03, "x_atras": -2.33, "y_atras": 0.99 },
-    "puerta_delantera": { "x_frente": 0.97, "x_atras": 0.0 },
-    "puerta_trasera": { "x_frente": -0.04, "x_atras": -0.95 }
+    "corona": 0.045,
+    "centro": [
+      [2.43, 0.68],
+      [2.38, 0.735],
+      [2.2, 0.78],
+      [1.6, 0.865],
+      [0.98, 0.935],
+      [0.55, 1.17],
+      [0.1, 1.4],
+      [-0.3, 1.468],
+      [-0.8, 1.43],
+      [-1.2, 1.3],
+      [-1.55, 1.13],
+      [-1.78, 1.058],
+      [-2.1, 1.042],
+      [-2.36, 1.008],
+      [-2.43, 0.87]
+    ],
+    "cintura": [
+      [2.43, 0.64],
+      [2.38, 0.69],
+      [2.2, 0.748],
+      [1.6, 0.832],
+      [0.98, 0.912],
+      [0.0, 0.945],
+      [-0.95, 0.98],
+      [-1.78, 1.03],
+      [-2.2, 1.01],
+      [-2.36, 0.985],
+      [-2.43, 0.83]
+    ],
+    "media_anchura": [
+      [2.43, 0.6],
+      [2.38, 0.74],
+      [2.25, 0.85],
+      [2.0, 0.905],
+      [1.6, 0.926],
+      [0.0, 0.932],
+      [-1.8, 0.926],
+      [-2.1, 0.905],
+      [-2.3, 0.85],
+      [-2.4, 0.76],
+      [-2.43, 0.64]
+    ],
+    "estribo": [
+      [2.43, 0.31],
+      [2.2, 0.29],
+      [1.9, 0.27],
+      [0, 0.265],
+      [-1.9, 0.27],
+      [-2.2, 0.3],
+      [-2.43, 0.33]
+    ],
+    "cofre": {
+      "x_atras": 0.99,
+      "x_frente": 2.19
+    },
+    "cajuela": {
+      "x_frente": -1.745,
+      "x_atras": -2.4
+    },
+    "parabrisas": {
+      "x_base": 0.97,
+      "x_techo": 0.1
+    },
+    "medallon": {
+      "x_techo": -0.8,
+      "x_base": -1.745
+    },
+    "puerta_delantera": {
+      "x_frente": 0.966,
+      "x_atras": 0.004
+    },
+    "puerta_trasera": {
+      "x_frente": -0.034,
+      "x_atras": -0.95
+    },
+    "fascia_delantera_x": 2.05,
+    "fascia_trasera_x": -2.1,
+    "ventanas": {
+      "delantera": [0.035, 0.97],
+      "trasera": [-0.89, -0.1],
+      "cuarto": [-1.56, -0.99]
+    }
   },
-
   "piezas_carroceria": [
-    { "id": "puerta_del_izq", "nombre": "Puerta delantera izquierda", "tipo": "puerta" },
-    { "id": "puerta_del_der", "nombre": "Puerta delantera derecha", "tipo": "puerta" },
-    { "id": "puerta_tras_izq", "nombre": "Puerta trasera izquierda", "tipo": "puerta" },
-    { "id": "puerta_tras_der", "nombre": "Puerta trasera derecha", "tipo": "puerta" },
-    { "id": "cofre", "nombre": "Cofre", "tipo": "cofre" },
-    { "id": "cajuela", "nombre": "Cajuela", "tipo": "cajuela" },
-    { "id": "fascia_delantera", "nombre": "Fascia delantera", "tipo": "fascia" },
-    { "id": "fascia_trasera", "nombre": "Fascia trasera", "tipo": "panel" },
-    { "id": "salpicadera_izq", "nombre": "Salpicadera izquierda (fender)", "tipo": "fender" },
-    { "id": "salpicadera_der", "nombre": "Salpicadera derecha (fender)", "tipo": "fender" },
-    { "id": "aleron", "nombre": "Alerón", "tipo": "aleron" },
-    { "id": "rueda", "nombre": "Rueda (rin + llanta)", "tipo": "rueda" },
-    { "id": "carroceria", "nombre": "Carrocería", "tipo": "panel" },
-    { "id": "motor", "nombre": "Motor 2.4L GDI", "tipo": "motor" }
+    {
+      "id": "puerta_del_izq",
+      "nombre": "Puerta delantera izquierda",
+      "tipo": "puerta"
+    },
+    {
+      "id": "puerta_del_der",
+      "nombre": "Puerta delantera derecha",
+      "tipo": "puerta"
+    },
+    {
+      "id": "puerta_tras_izq",
+      "nombre": "Puerta trasera izquierda",
+      "tipo": "puerta"
+    },
+    {
+      "id": "puerta_tras_der",
+      "nombre": "Puerta trasera derecha",
+      "tipo": "puerta"
+    },
+    {
+      "id": "cofre",
+      "nombre": "Cofre",
+      "tipo": "cofre"
+    },
+    {
+      "id": "cajuela",
+      "nombre": "Cajuela",
+      "tipo": "cajuela"
+    },
+    {
+      "id": "fascia_delantera",
+      "nombre": "Fascia delantera",
+      "tipo": "fascia"
+    },
+    {
+      "id": "fascia_trasera",
+      "nombre": "Fascia trasera",
+      "tipo": "panel"
+    },
+    {
+      "id": "salpicadera_izq",
+      "nombre": "Salpicadera izquierda (fender)",
+      "tipo": "fender"
+    },
+    {
+      "id": "salpicadera_der",
+      "nombre": "Salpicadera derecha (fender)",
+      "tipo": "fender"
+    },
+    {
+      "id": "aleron",
+      "nombre": "Alerón",
+      "tipo": "aleron"
+    },
+    {
+      "id": "rueda",
+      "nombre": "Rueda (rin + llanta)",
+      "tipo": "rueda"
+    },
+    {
+      "id": "carroceria",
+      "nombre": "Carrocería",
+      "tipo": "panel"
+    },
+    {
+      "id": "motor",
+      "nombre": "Motor 2.4L GDI",
+      "tipo": "motor"
+    }
   ],
-
   "articulaciones": {
     "nota": "pivote en metros (coordenadas del carro), eje de giro y ángulo de apertura en grados.",
-    "puerta_del_izq": { "pivote": [0.97, 0, -0.93], "eje": "y", "angulo": -62 },
-    "puerta_del_der": { "pivote": [0.97, 0, 0.93], "eje": "y", "angulo": 62 },
-    "puerta_tras_izq": { "pivote": [-0.04, 0, -0.93], "eje": "y", "angulo": -62 },
-    "puerta_tras_der": { "pivote": [-0.04, 0, 0.93], "eje": "y", "angulo": 62 },
-    "cofre": { "pivote": [0.98, 0.945, 0], "eje": "z", "angulo": 58 },
-    "cajuela": { "pivote": [-1.72, 1.03, 0], "eje": "z", "angulo": -68 }
+    "puerta_del_izq": {
+      "pivote": [0.966, 0, -0.932],
+      "eje": "y",
+      "angulo": -62
+    },
+    "puerta_del_der": {
+      "pivote": [0.966, 0, 0.932],
+      "eje": "y",
+      "angulo": 62
+    },
+    "puerta_tras_izq": {
+      "pivote": [-0.034, 0, -0.932],
+      "eje": "y",
+      "angulo": -62
+    },
+    "puerta_tras_der": {
+      "pivote": [-0.034, 0, 0.932],
+      "eje": "y",
+      "angulo": 62
+    },
+    "cofre": {
+      "pivote": [0.99, 0.93, 0],
+      "eje": "z",
+      "angulo": 58
+    },
+    "cajuela": {
+      "pivote": [-1.745, 1.055, 0],
+      "eje": "z",
+      "angulo": -68
+    }
   },
-
   "motor_montaje": {
-    "posicion": [1.56, 0.25, -0.04],
+    "posicion": [1.56, 0.23, -0.04],
     "posicion_fuera": [3.75, 0.55, 0],
     "altura_extraccion": 2.1
   },
-
   "colores_fabrica": {
     "nota": "Tonos aproximados de la paleta de fábrica. Para igualar pintura usa el código de color de la etiqueta del carro.",
     "verificado": false,
     "lista": [
-      { "nombre": "Blanco perla", "hex": "#eeeeea", "acabado": "brillante" },
-      { "nombre": "Plata", "hex": "#b8bcc0", "acabado": "metalico" },
-      { "nombre": "Gris grafito", "hex": "#4a4e54", "acabado": "metalico" },
-      { "nombre": "Negro", "hex": "#0f1012", "acabado": "brillante" },
-      { "nombre": "Azul noche", "hex": "#1d2f55", "acabado": "metalico" },
-      { "nombre": "Azul eléctrico", "hex": "#1f5fbf", "acabado": "metalico" },
-      { "nombre": "Rojo vino", "hex": "#6d1420", "acabado": "metalico" },
-      { "nombre": "Bronce", "hex": "#7a6650", "acabado": "metalico" }
+      {
+        "nombre": "Blanco perla",
+        "hex": "#eeeeea",
+        "acabado": "brillante"
+      },
+      {
+        "nombre": "Plata",
+        "hex": "#b8bcc0",
+        "acabado": "metalico"
+      },
+      {
+        "nombre": "Gris grafito",
+        "hex": "#4a4e54",
+        "acabado": "metalico"
+      },
+      {
+        "nombre": "Negro",
+        "hex": "#0f1012",
+        "acabado": "brillante"
+      },
+      {
+        "nombre": "Azul noche",
+        "hex": "#1d2f55",
+        "acabado": "metalico"
+      },
+      {
+        "nombre": "Azul eléctrico",
+        "hex": "#1f5fbf",
+        "acabado": "metalico"
+      },
+      {
+        "nombre": "Rojo vino",
+        "hex": "#6d1420",
+        "acabado": "metalico"
+      },
+      {
+        "nombre": "Bronce",
+        "hex": "#7a6650",
+        "acabado": "metalico"
+      }
     ]
   },
-
   "acabados": {
-    "brillante": { "nombre": "Brillante", "roughness": 0.28, "metalness": 0.05, "clearcoat": 1, "clearcoatRoughness": 0.05 },
-    "mate": { "nombre": "Mate", "roughness": 0.85, "metalness": 0.0, "clearcoat": 0, "clearcoatRoughness": 1 },
-    "metalico": { "nombre": "Metálico", "roughness": 0.32, "metalness": 0.75, "clearcoat": 1, "clearcoatRoughness": 0.08 }
+    "brillante": {
+      "nombre": "Brillante",
+      "roughness": 0.28,
+      "metalness": 0.05,
+      "clearcoat": 1,
+      "clearcoatRoughness": 0.05
+    },
+    "mate": {
+      "nombre": "Mate",
+      "roughness": 0.85,
+      "metalness": 0.0,
+      "clearcoat": 0,
+      "clearcoatRoughness": 1
+    },
+    "metalico": {
+      "nombre": "Metálico",
+      "roughness": 0.32,
+      "metalness": 0.75,
+      "clearcoat": 1,
+      "clearcoatRoughness": 0.08
+    }
   },
-
   "rines": {
-    "diametros": [16, 17, 18, 19],
-    "rayos": [5, 6, 7, 10],
+    "diametros": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "rayos": [
+      5,
+      6,
+      7,
+      10
+    ],
     "colores": [
-      { "nombre": "Plata", "hex": "#c4c8cc" },
-      { "nombre": "Grafito", "hex": "#3b3e43" },
-      { "nombre": "Negro mate", "hex": "#151517" },
-      { "nombre": "Bronce", "hex": "#8a6a3a" },
-      { "nombre": "Blanco", "hex": "#e8e8e8" }
+      {
+        "nombre": "Plata",
+        "hex": "#c4c8cc"
+      },
+      {
+        "nombre": "Grafito",
+        "hex": "#3b3e43"
+      },
+      {
+        "nombre": "Negro mate",
+        "hex": "#151517"
+      },
+      {
+        "nombre": "Bronce",
+        "hex": "#8a6a3a"
+      },
+      {
+        "nombre": "Blanco",
+        "hex": "#e8e8e8"
+      }
     ],
     "especificacion": {
       "verificado": false,
@@ -110,85 +333,247 @@
       "torque_tuercas": "65–80 lb·ft (9–11 kgf·m) aprox."
     }
   },
-
   "llantas": {
     "referencia": "215/55R17",
     "tolerancia_pct": 3,
     "fabrica": [
-      { "version": "SE", "medida": "205/65R16" },
-      { "version": "Versión media", "medida": "215/55R17" },
-      { "version": "Sport / Limited", "medida": "235/45R18" }
+      {
+        "version": "SE",
+        "medida": "205/65R16"
+      },
+      {
+        "version": "Versión media",
+        "medida": "215/55R17"
+      },
+      {
+        "version": "Sport / Limited",
+        "medida": "235/45R18"
+      }
     ],
     "compatibles": {
       "16": [
-        { "medida": "205/65R16", "indice_carga": 95, "indice_velocidad": "H", "verificado": false },
-        { "medida": "215/60R16", "indice_carga": 95, "indice_velocidad": "V", "verificado": false },
-        { "medida": "205/60R16", "indice_carga": 92, "indice_velocidad": "V", "verificado": false },
-        { "medida": "225/55R16", "indice_carga": 95, "indice_velocidad": "V", "verificado": false }
+        {
+          "medida": "205/65R16",
+          "indice_carga": 95,
+          "indice_velocidad": "H",
+          "verificado": false
+        },
+        {
+          "medida": "215/60R16",
+          "indice_carga": 95,
+          "indice_velocidad": "V",
+          "verificado": false
+        },
+        {
+          "medida": "205/60R16",
+          "indice_carga": 92,
+          "indice_velocidad": "V",
+          "verificado": false
+        },
+        {
+          "medida": "225/55R16",
+          "indice_carga": 95,
+          "indice_velocidad": "V",
+          "verificado": false
+        }
       ],
       "17": [
-        { "medida": "215/55R17", "indice_carga": 94, "indice_velocidad": "V", "verificado": false },
-        { "medida": "225/50R17", "indice_carga": 94, "indice_velocidad": "W", "verificado": false },
-        { "medida": "225/55R17", "indice_carga": 97, "indice_velocidad": "V", "verificado": false },
-        { "medida": "235/45R17", "indice_carga": 94, "indice_velocidad": "W", "verificado": false }
+        {
+          "medida": "215/55R17",
+          "indice_carga": 94,
+          "indice_velocidad": "V",
+          "verificado": false
+        },
+        {
+          "medida": "225/50R17",
+          "indice_carga": 94,
+          "indice_velocidad": "W",
+          "verificado": false
+        },
+        {
+          "medida": "225/55R17",
+          "indice_carga": 97,
+          "indice_velocidad": "V",
+          "verificado": false
+        },
+        {
+          "medida": "235/45R17",
+          "indice_carga": 94,
+          "indice_velocidad": "W",
+          "verificado": false
+        }
       ],
       "18": [
-        { "medida": "235/45R18", "indice_carga": 94, "indice_velocidad": "V", "verificado": false },
-        { "medida": "225/45R18", "indice_carga": 95, "indice_velocidad": "W", "verificado": false },
-        { "medida": "245/40R18", "indice_carga": 97, "indice_velocidad": "W", "verificado": false },
-        { "medida": "235/50R18", "indice_carga": 97, "indice_velocidad": "V", "verificado": false }
+        {
+          "medida": "235/45R18",
+          "indice_carga": 94,
+          "indice_velocidad": "V",
+          "verificado": false
+        },
+        {
+          "medida": "225/45R18",
+          "indice_carga": 95,
+          "indice_velocidad": "W",
+          "verificado": false
+        },
+        {
+          "medida": "245/40R18",
+          "indice_carga": 97,
+          "indice_velocidad": "W",
+          "verificado": false
+        },
+        {
+          "medida": "235/50R18",
+          "indice_carga": 97,
+          "indice_velocidad": "V",
+          "verificado": false
+        }
       ],
       "19": [
-        { "medida": "235/40R19", "indice_carga": 96, "indice_velocidad": "W", "verificado": false },
-        { "medida": "245/35R19", "indice_carga": 93, "indice_velocidad": "Y", "verificado": false },
-        { "medida": "225/40R19", "indice_carga": 93, "indice_velocidad": "W", "verificado": false },
-        { "medida": "245/40R19", "indice_carga": 98, "indice_velocidad": "W", "verificado": false }
+        {
+          "medida": "235/40R19",
+          "indice_carga": 96,
+          "indice_velocidad": "W",
+          "verificado": false
+        },
+        {
+          "medida": "245/35R19",
+          "indice_carga": 93,
+          "indice_velocidad": "Y",
+          "verificado": false
+        },
+        {
+          "medida": "225/40R19",
+          "indice_carga": 93,
+          "indice_velocidad": "W",
+          "verificado": false
+        },
+        {
+          "medida": "245/40R19",
+          "indice_carga": 98,
+          "indice_velocidad": "W",
+          "verificado": false
+        }
       ]
     },
-    "presion": { "valor": "35 psi en frío (aprox.)", "verificado": false, "nota": "La presión correcta está en la etiqueta del marco de la puerta del conductor." }
+    "presion": {
+      "valor": "35 psi en frío (aprox.)",
+      "verificado": false,
+      "nota": "La presión correcta está en la etiqueta del marco de la puerta del conductor."
+    }
   },
-
   "carroceria": {
     "fascia": [
-      { "id": "estandar", "nombre": "Estándar", "descripcion": "Fascia de fábrica con parrilla horizontal." },
-      { "id": "deportiva", "nombre": "Deportiva", "descripcion": "Tomas de aire grandes y splitter inferior." },
-      { "id": "touring", "nombre": "Touring", "descripcion": "Barras de parrilla cromadas y faros de niebla." }
+      {
+        "id": "estandar",
+        "nombre": "Estándar",
+        "descripcion": "Fascia de fábrica con parrilla horizontal."
+      },
+      {
+        "id": "deportiva",
+        "nombre": "Deportiva",
+        "descripcion": "Tomas de aire grandes y splitter inferior."
+      },
+      {
+        "id": "touring",
+        "nombre": "Touring",
+        "descripcion": "Barras de parrilla cromadas y faros de niebla."
+      }
     ],
     "fender": [
-      { "id": "estandar", "nombre": "Estándar", "descripcion": "Salpicadera de fábrica." },
-      { "id": "ensanchado", "nombre": "Ensanchado (flares)", "descripcion": "Extensiones de arco para rines con menos offset." },
-      { "id": "ventilado", "nombre": "Con ventila", "descripcion": "Salpicadera con ventila decorativa." }
+      {
+        "id": "estandar",
+        "nombre": "Estándar",
+        "descripcion": "Salpicadera de fábrica."
+      },
+      {
+        "id": "ensanchado",
+        "nombre": "Ensanchado (flares)",
+        "descripcion": "Extensiones de arco para rines con menos offset."
+      },
+      {
+        "id": "ventilado",
+        "nombre": "Con ventila",
+        "descripcion": "Salpicadera con ventila decorativa."
+      }
     ],
     "aleron": [
-      { "id": "ninguno", "nombre": "Sin alerón", "descripcion": "Cajuela lisa de fábrica." },
-      { "id": "labio", "nombre": "Labio (lip)", "descripcion": "Alerón discreto tipo labio sobre la cajuela." },
-      { "id": "ala", "nombre": "Ala con soportes", "descripcion": "Alerón elevado tipo ala." }
+      {
+        "id": "ninguno",
+        "nombre": "Sin alerón",
+        "descripcion": "Cajuela lisa de fábrica."
+      },
+      {
+        "id": "labio",
+        "nombre": "Labio (lip)",
+        "descripcion": "Alerón discreto tipo labio sobre la cajuela."
+      },
+      {
+        "id": "ala",
+        "nombre": "Ala con soportes",
+        "descripcion": "Alerón elevado tipo ala."
+      }
     ]
   },
-
   "suspension": [
-    { "valor": 0, "nombre": "Altura de fábrica" },
-    { "valor": -30, "nombre": "-30 mm (resortes cortos)" },
-    { "valor": -50, "nombre": "-50 mm (resortes deportivos / coilovers)" }
+    {
+      "valor": 0,
+      "nombre": "Altura de fábrica"
+    },
+    {
+      "valor": -30,
+      "nombre": "-30 mm (resortes cortos)"
+    },
+    {
+      "valor": -50,
+      "nombre": "-50 mm (resortes deportivos / coilovers)"
+    }
   ],
-
   "mejoras": [
-    { "id": "filtro_alto_flujo", "nombre": "Filtro de aire de alto flujo", "categoria": "Admisión" },
-    { "id": "admision_fria", "nombre": "Admisión de aire frío", "categoria": "Admisión" },
-    { "id": "escape_cat_back", "nombre": "Escape cat-back con doble salida", "categoria": "Escape", "visual": "escape_doble" },
-    { "id": "bujias_iridio", "nombre": "Bujías de iridio", "categoria": "Encendido" },
-    { "id": "aceite_sintetico", "nombre": "Aceite 100% sintético 5W-20", "categoria": "Mantenimiento" },
-    { "id": "faros_led", "nombre": "Focos LED para faros", "categoria": "Eléctrico", "visual": "faros_led" },
-    { "id": "pastillas_ceramicas", "nombre": "Balatas cerámicas", "categoria": "Frenos" }
+    {
+      "id": "filtro_alto_flujo",
+      "nombre": "Filtro de aire de alto flujo",
+      "categoria": "Admisión"
+    },
+    {
+      "id": "admision_fria",
+      "nombre": "Admisión de aire frío",
+      "categoria": "Admisión"
+    },
+    {
+      "id": "escape_cat_back",
+      "nombre": "Escape cat-back con doble salida",
+      "categoria": "Escape",
+      "visual": "escape_doble"
+    },
+    {
+      "id": "bujias_iridio",
+      "nombre": "Bujías de iridio",
+      "categoria": "Encendido"
+    },
+    {
+      "id": "aceite_sintetico",
+      "nombre": "Aceite 100% sintético 5W-20",
+      "categoria": "Mantenimiento"
+    },
+    {
+      "id": "faros_led",
+      "nombre": "Focos LED para faros",
+      "categoria": "Eléctrico",
+      "visual": "faros_led"
+    },
+    {
+      "id": "pastillas_ceramicas",
+      "nombre": "Balatas cerámicas",
+      "categoria": "Frenos"
+    }
   ],
-
   "aceite_motor": {
     "verificado": false,
     "viscosidad": "5W-20",
     "capacidad": "≈ 4.8 cuartos (≈ 4.5 L) con filtro",
     "intervalo": "Cada 8,000–12,000 km o 6 meses (uso severo: cada 5,000 km)"
   },
-
   "fusibles": {
     "verificado": false,
     "nota": "DATOS DE EJEMPLO para mostrar la estructura. No son los fusibles reales del vehículo.",
@@ -198,12 +583,42 @@
         "nombre": "Caja de fusibles de cabina",
         "ubicacion": "Debajo del tablero, lado del conductor (ejemplo)",
         "fusibles": [
-          { "numero": "F1", "amperaje": 10, "circuito": "Módulo de bolsas de aire", "ejemplo": true },
-          { "numero": "F5", "amperaje": 15, "circuito": "Radio / pantalla", "ejemplo": true },
-          { "numero": "F8", "amperaje": 10, "circuito": "Luces interiores", "ejemplo": true },
-          { "numero": "F12", "amperaje": 20, "circuito": "Encendedor / toma de 12 V", "ejemplo": true },
-          { "numero": "F15", "amperaje": 25, "circuito": "Elevadores de ventana delanteros", "ejemplo": true },
-          { "numero": "F18", "amperaje": 10, "circuito": "Monitoreo de presión de llantas (TPMS)", "ejemplo": true }
+          {
+            "numero": "F1",
+            "amperaje": 10,
+            "circuito": "Módulo de bolsas de aire",
+            "ejemplo": true
+          },
+          {
+            "numero": "F5",
+            "amperaje": 15,
+            "circuito": "Radio / pantalla",
+            "ejemplo": true
+          },
+          {
+            "numero": "F8",
+            "amperaje": 10,
+            "circuito": "Luces interiores",
+            "ejemplo": true
+          },
+          {
+            "numero": "F12",
+            "amperaje": 20,
+            "circuito": "Encendedor / toma de 12 V",
+            "ejemplo": true
+          },
+          {
+            "numero": "F15",
+            "amperaje": 25,
+            "circuito": "Elevadores de ventana delanteros",
+            "ejemplo": true
+          },
+          {
+            "numero": "F18",
+            "amperaje": 10,
+            "circuito": "Monitoreo de presión de llantas (TPMS)",
+            "ejemplo": true
+          }
         ]
       },
       {
@@ -211,57 +626,363 @@
         "nombre": "Caja de fusibles del compartimento del motor",
         "ubicacion": "Junto a la batería (ejemplo)",
         "fusibles": [
-          { "numero": "M3", "amperaje": 15, "circuito": "Faro bajo izquierdo", "ejemplo": true },
-          { "numero": "M4", "amperaje": 15, "circuito": "Faro bajo derecho", "ejemplo": true },
-          { "numero": "M7", "amperaje": 20, "circuito": "Bobinas de encendido", "ejemplo": true },
-          { "numero": "M9", "amperaje": 15, "circuito": "Inyectores / ECU", "ejemplo": true },
-          { "numero": "M11", "amperaje": 20, "circuito": "Bomba de combustible", "ejemplo": true },
-          { "numero": "M14", "amperaje": 10, "circuito": "Compresor de A/C (embrague)", "ejemplo": true },
-          { "numero": "M16", "amperaje": 10, "circuito": "Sensores de oxígeno (calefactor)", "ejemplo": true },
-          { "numero": "M20", "amperaje": 150, "circuito": "Alternador (fusible principal)", "ejemplo": true },
-          { "numero": "M22", "amperaje": 40, "circuito": "Motor de arranque (marcha)", "ejemplo": true }
+          {
+            "numero": "M3",
+            "amperaje": 15,
+            "circuito": "Faro bajo izquierdo",
+            "ejemplo": true
+          },
+          {
+            "numero": "M4",
+            "amperaje": 15,
+            "circuito": "Faro bajo derecho",
+            "ejemplo": true
+          },
+          {
+            "numero": "M7",
+            "amperaje": 20,
+            "circuito": "Bobinas de encendido",
+            "ejemplo": true
+          },
+          {
+            "numero": "M9",
+            "amperaje": 15,
+            "circuito": "Inyectores / ECU",
+            "ejemplo": true
+          },
+          {
+            "numero": "M11",
+            "amperaje": 20,
+            "circuito": "Bomba de combustible",
+            "ejemplo": true
+          },
+          {
+            "numero": "M14",
+            "amperaje": 10,
+            "circuito": "Compresor de A/C (embrague)",
+            "ejemplo": true
+          },
+          {
+            "numero": "M16",
+            "amperaje": 10,
+            "circuito": "Sensores de oxígeno (calefactor)",
+            "ejemplo": true
+          },
+          {
+            "numero": "M20",
+            "amperaje": 150,
+            "circuito": "Alternador (fusible principal)",
+            "ejemplo": true
+          },
+          {
+            "numero": "M22",
+            "amperaje": 40,
+            "circuito": "Motor de arranque (marcha)",
+            "ejemplo": true
+          }
         ]
       }
     ]
   },
-
   "fichas": {
     "nota": "Ficha 'Lo que necesitas saber' por elemento elegible. 'relacionadas' apunta a ids de affiliates.json.",
     "pintura": {
       "titulo": "Pintura / color",
-      "especificacion": ["Para igualar el color de fábrica usa el código de pintura de la etiqueta del marco de puerta."],
-      "relacionadas": ["vinil_wrap", "cera_sellador"],
-      "recomendaciones": ["Un vinil (wrap) es reversible y protege la pintura original.", "El acabado mate requiere jabón sin cera."],
-      "advertencias": ["Si cambias el color de forma permanente, actualiza la tarjeta de circulación."]
+      "especificacion": [
+        "Para igualar el color de fábrica usa el código de pintura de la etiqueta del marco de puerta."
+      ],
+      "relacionadas": [
+        "vinil_wrap",
+        "cera_sellador"
+      ],
+      "recomendaciones": [
+        "Un vinil (wrap) es reversible y protege la pintura original.",
+        "El acabado mate requiere jabón sin cera."
+      ],
+      "advertencias": [
+        "Si cambias el color de forma permanente, actualiza la tarjeta de circulación."
+      ]
     },
     "rin": {
       "titulo": "Rines",
-      "relacionadas": ["birlos", "tuercas_seguridad", "sensor_tpms", "valvulas_llanta", "alineacion_balanceo"],
-      "recomendaciones": ["Respeta barrenación y centro; usa anillos centradores si el centro del rin es mayor.", "Aprieta en estrella con torquímetro y vuelve a revisar a los 100 km."],
-      "advertencias": ["Si tu carro tiene TPMS, pasa los sensores al rin nuevo o compra sensores compatibles.", "Un offset distinto puede hacer que la llanta roce el fender o la suspensión."]
+      "relacionadas": [
+        "birlos",
+        "tuercas_seguridad",
+        "sensor_tpms",
+        "valvulas_llanta",
+        "alineacion_balanceo"
+      ],
+      "recomendaciones": [
+        "Respeta barrenación y centro; usa anillos centradores si el centro del rin es mayor.",
+        "Aprieta en estrella con torquímetro y vuelve a revisar a los 100 km."
+      ],
+      "advertencias": [
+        "Si tu carro tiene TPMS, pasa los sensores al rin nuevo o compra sensores compatibles.",
+        "Un offset distinto puede hacer que la llanta roce el fender o la suspensión."
+      ]
     },
     "llanta": {
       "titulo": "Llantas",
-      "relacionadas": ["valvulas_llanta", "sensor_tpms", "alineacion_balanceo"],
-      "recomendaciones": ["Cambia las 4 llantas juntas o al menos por eje.", "Revisa la fecha DOT: no compres llantas con más de 2 años de fabricación."],
-      "advertencias": ["El índice de carga y velocidad debe ser igual o mayor al original.", "Si el diámetro cambia más de 3%, el velocímetro y el ABS/ESC pueden leer distinto."]
+      "relacionadas": [
+        "valvulas_llanta",
+        "sensor_tpms",
+        "alineacion_balanceo"
+      ],
+      "recomendaciones": [
+        "Cambia las 4 llantas juntas o al menos por eje.",
+        "Revisa la fecha DOT: no compres llantas con más de 2 años de fabricación."
+      ],
+      "advertencias": [
+        "El índice de carga y velocidad debe ser igual o mayor al original.",
+        "Si el diámetro cambia más de 3%, el velocímetro y el ABS/ESC pueden leer distinto."
+      ]
     },
-    "fascia_estandar": { "titulo": "Fascia delantera estándar", "relacionadas": ["fascia_estandar", "grapas_fascia"], "recomendaciones": ["Pide la fascia en primer (sin pintar) y píntala al color del carro."], "advertencias": ["Revisa si tu versión tiene sensores de estacionamiento delanteros."] },
-    "fascia_deportiva": { "titulo": "Fascia delantera deportiva", "relacionadas": ["fascia_deportiva", "grapas_fascia"], "recomendaciones": ["Las fascias universales casi siempre requieren ajuste: cotiza la instalación."], "advertencias": ["Un splitter bajo puede rozar en topes y rampas."] },
-    "fascia_touring": { "titulo": "Fascia delantera touring", "relacionadas": ["fascia_touring", "faros_niebla", "grapas_fascia"], "fusible": { "caja": "cabina", "numero": "F8", "nota": "Los faros de niebla requieren su propio relevador y fusible (ejemplo)." }, "recomendaciones": ["Usa un arnés con relevador para los faros de niebla."], "advertencias": [] },
-    "fender_estandar": { "titulo": "Salpicadera estándar", "relacionadas": ["fender_estandar"], "recomendaciones": [], "advertencias": [] },
-    "fender_ensanchado": { "titulo": "Extensiones de salpicadera", "relacionadas": ["fender_ensanchado"], "recomendaciones": ["Útiles si usas rines con menos offset o llantas más anchas."], "advertencias": ["Verifica el reglamento de tránsito local sobre partes que sobresalen."] },
-    "fender_ventilado": { "titulo": "Salpicadera con ventila", "relacionadas": ["fender_ventilado"], "recomendaciones": ["Las ventilas decorativas son de adhesivo 3M; limpia con alcohol isopropílico antes de pegar."], "advertencias": [] },
-    "aleron_labio": { "titulo": "Alerón tipo labio", "relacionadas": ["aleron_labio"], "recomendaciones": ["Prefiere los de cinta 3M para no perforar la cajuela."], "advertencias": [] },
-    "aleron_ala": { "titulo": "Alerón tipo ala", "relacionadas": ["aleron_ala"], "recomendaciones": ["Requiere perforar la cajuela: sella con silicón para evitar filtraciones."], "advertencias": ["Agrega peso a la cajuela; revisa los amortiguadores de gas de la tapa."] },
-    "suspension_-30": { "titulo": "Suspensión -30 mm", "especificacion": ["Resortes cortos -30 mm aprox. (verifica que sean para sedán 2015–2019)."], "relacionadas": ["resortes_cortos", "alineacion_balanceo"], "recomendaciones": ["Después de bajar el carro, haz alineación de inmediato."], "advertencias": ["Con amortiguadores originales, bajar más de 30 mm acorta su vida útil."] },
-    "suspension_-50": { "titulo": "Suspensión -50 mm", "especificacion": ["Kit de coilovers o resortes -50 mm con amortiguadores de carrera corta."], "relacionadas": ["coilovers", "alineacion_balanceo"], "recomendaciones": ["Combínalo con llanta de perfil bajo para evitar rozamientos."], "advertencias": ["Topes y vados: cuidado con la fascia y el cárter.", "Revisa que la llanta no roce el fender con la dirección girada."] },
-    "filtro_alto_flujo": { "titulo": "Filtro de aire de alto flujo", "especificacion": ["Tipo panel, reemplazo directo del filtro original."], "relacionadas": ["filtro_alto_flujo", "kit_limpieza_filtro"], "recomendaciones": ["Lávalo y acéitalo cada 15,000–25,000 km."], "advertencias": ["No excedas el aceite del filtro: puede ensuciar el sensor MAF."] },
-    "admision_fria": { "titulo": "Admisión de aire frío", "especificacion": ["Tubo de admisión con filtro cónico; reemplaza la caja de filtro original."], "relacionadas": ["admision_fria"], "recomendaciones": ["Busca kits con escudo térmico."], "advertencias": ["En temporada de lluvias, un filtro cónico bajo puede aspirar agua."] },
-    "escape_cat_back": { "titulo": "Escape cat-back", "especificacion": ["Del catalizador hacia atrás; doble salida."], "relacionadas": ["escape_cat_back", "empaques_escape"], "recomendaciones": ["Pide abrazaderas y empaques nuevos en la instalación."], "advertencias": ["No retires el catalizador: es obligatorio para la verificación."] },
-    "bujias_iridio": { "titulo": "Bujías de iridio", "especificacion": ["Juego de 4 bujías de iridio, calibración de fábrica (verifica en tu manual)."], "relacionadas": ["bujias", "grasa_dielectrica"], "fusible": { "caja": "motor", "numero": "M7" }, "recomendaciones": ["Cámbialas con el motor frío y aprieta con torquímetro."], "advertencias": ["No uses antiadherente si la bujía ya trae recubrimiento."] },
-    "aceite_sintetico": { "titulo": "Aceite 100% sintético", "especificacion": ["5W-20, ≈ 4.8 cuartos con filtro (verifica en tu manual)."], "relacionadas": ["aceite_sintetico", "filtro_aceite"], "recomendaciones": ["Cambia el filtro de aceite en cada cambio."], "advertencias": ["No mezcles viscosidades distintas a la recomendada."] },
-    "faros_led": { "titulo": "Focos LED para faros", "especificacion": ["Revisa el tipo de foco de tu faro (ej. H7 / H11 / 9005) en el manual."], "relacionadas": ["faros_led"], "fusible": { "caja": "motor", "numero": "M3", "nota": "Faro bajo izquierdo M3 y derecho M4 (ejemplo). Los LED consumen menos corriente que el halógeno." }, "recomendaciones": ["Alinea los faros después de instalar para no deslumbrar."], "advertencias": ["Algunos LED marcan error de foco fundido: puede requerir resistencia o decodificador CANbus."] },
-    "pastillas_ceramicas": { "titulo": "Balatas cerámicas", "especificacion": ["Juego delantero para disco ventilado."], "relacionadas": ["pastillas_ceramicas", "liquido_frenos"], "recomendaciones": ["Rectifica o cambia los discos si tienen escalón."], "advertencias": ["Haz el asentamiento (bedding) los primeros 300 km."] }
+    "fascia_estandar": {
+      "titulo": "Fascia delantera estándar",
+      "relacionadas": [
+        "fascia_estandar",
+        "grapas_fascia"
+      ],
+      "recomendaciones": [
+        "Pide la fascia en primer (sin pintar) y píntala al color del carro."
+      ],
+      "advertencias": [
+        "Revisa si tu versión tiene sensores de estacionamiento delanteros."
+      ]
+    },
+    "fascia_deportiva": {
+      "titulo": "Fascia delantera deportiva",
+      "relacionadas": [
+        "fascia_deportiva",
+        "grapas_fascia"
+      ],
+      "recomendaciones": [
+        "Las fascias universales casi siempre requieren ajuste: cotiza la instalación."
+      ],
+      "advertencias": [
+        "Un splitter bajo puede rozar en topes y rampas."
+      ]
+    },
+    "fascia_touring": {
+      "titulo": "Fascia delantera touring",
+      "relacionadas": [
+        "fascia_touring",
+        "faros_niebla",
+        "grapas_fascia"
+      ],
+      "fusible": {
+        "caja": "cabina",
+        "numero": "F8",
+        "nota": "Los faros de niebla requieren su propio relevador y fusible (ejemplo)."
+      },
+      "recomendaciones": [
+        "Usa un arnés con relevador para los faros de niebla."
+      ],
+      "advertencias": []
+    },
+    "fender_estandar": {
+      "titulo": "Salpicadera estándar",
+      "relacionadas": [
+        "fender_estandar"
+      ],
+      "recomendaciones": [],
+      "advertencias": []
+    },
+    "fender_ensanchado": {
+      "titulo": "Extensiones de salpicadera",
+      "relacionadas": [
+        "fender_ensanchado"
+      ],
+      "recomendaciones": [
+        "Útiles si usas rines con menos offset o llantas más anchas."
+      ],
+      "advertencias": [
+        "Verifica el reglamento de tránsito local sobre partes que sobresalen."
+      ]
+    },
+    "fender_ventilado": {
+      "titulo": "Salpicadera con ventila",
+      "relacionadas": [
+        "fender_ventilado"
+      ],
+      "recomendaciones": [
+        "Las ventilas decorativas son de adhesivo 3M; limpia con alcohol isopropílico antes de pegar."
+      ],
+      "advertencias": []
+    },
+    "aleron_labio": {
+      "titulo": "Alerón tipo labio",
+      "relacionadas": [
+        "aleron_labio"
+      ],
+      "recomendaciones": [
+        "Prefiere los de cinta 3M para no perforar la cajuela."
+      ],
+      "advertencias": []
+    },
+    "aleron_ala": {
+      "titulo": "Alerón tipo ala",
+      "relacionadas": [
+        "aleron_ala"
+      ],
+      "recomendaciones": [
+        "Requiere perforar la cajuela: sella con silicón para evitar filtraciones."
+      ],
+      "advertencias": [
+        "Agrega peso a la cajuela; revisa los amortiguadores de gas de la tapa."
+      ]
+    },
+    "suspension_-30": {
+      "titulo": "Suspensión -30 mm",
+      "especificacion": [
+        "Resortes cortos -30 mm aprox. (verifica que sean para sedán 2015–2019)."
+      ],
+      "relacionadas": [
+        "resortes_cortos",
+        "alineacion_balanceo"
+      ],
+      "recomendaciones": [
+        "Después de bajar el carro, haz alineación de inmediato."
+      ],
+      "advertencias": [
+        "Con amortiguadores originales, bajar más de 30 mm acorta su vida útil."
+      ]
+    },
+    "suspension_-50": {
+      "titulo": "Suspensión -50 mm",
+      "especificacion": [
+        "Kit de coilovers o resortes -50 mm con amortiguadores de carrera corta."
+      ],
+      "relacionadas": [
+        "coilovers",
+        "alineacion_balanceo"
+      ],
+      "recomendaciones": [
+        "Combínalo con llanta de perfil bajo para evitar rozamientos."
+      ],
+      "advertencias": [
+        "Topes y vados: cuidado con la fascia y el cárter.",
+        "Revisa que la llanta no roce el fender con la dirección girada."
+      ]
+    },
+    "filtro_alto_flujo": {
+      "titulo": "Filtro de aire de alto flujo",
+      "especificacion": [
+        "Tipo panel, reemplazo directo del filtro original."
+      ],
+      "relacionadas": [
+        "filtro_alto_flujo",
+        "kit_limpieza_filtro"
+      ],
+      "recomendaciones": [
+        "Lávalo y acéitalo cada 15,000–25,000 km."
+      ],
+      "advertencias": [
+        "No excedas el aceite del filtro: puede ensuciar el sensor MAF."
+      ]
+    },
+    "admision_fria": {
+      "titulo": "Admisión de aire frío",
+      "especificacion": [
+        "Tubo de admisión con filtro cónico; reemplaza la caja de filtro original."
+      ],
+      "relacionadas": [
+        "admision_fria"
+      ],
+      "recomendaciones": [
+        "Busca kits con escudo térmico."
+      ],
+      "advertencias": [
+        "En temporada de lluvias, un filtro cónico bajo puede aspirar agua."
+      ]
+    },
+    "escape_cat_back": {
+      "titulo": "Escape cat-back",
+      "especificacion": [
+        "Del catalizador hacia atrás; doble salida."
+      ],
+      "relacionadas": [
+        "escape_cat_back",
+        "empaques_escape"
+      ],
+      "recomendaciones": [
+        "Pide abrazaderas y empaques nuevos en la instalación."
+      ],
+      "advertencias": [
+        "No retires el catalizador: es obligatorio para la verificación."
+      ]
+    },
+    "bujias_iridio": {
+      "titulo": "Bujías de iridio",
+      "especificacion": [
+        "Juego de 4 bujías de iridio, calibración de fábrica (verifica en tu manual)."
+      ],
+      "relacionadas": [
+        "bujias",
+        "grasa_dielectrica"
+      ],
+      "fusible": {
+        "caja": "motor",
+        "numero": "M7"
+      },
+      "recomendaciones": [
+        "Cámbialas con el motor frío y aprieta con torquímetro."
+      ],
+      "advertencias": [
+        "No uses antiadherente si la bujía ya trae recubrimiento."
+      ]
+    },
+    "aceite_sintetico": {
+      "titulo": "Aceite 100% sintético",
+      "especificacion": [
+        "5W-20, ≈ 4.8 cuartos con filtro (verifica en tu manual)."
+      ],
+      "relacionadas": [
+        "aceite_sintetico",
+        "filtro_aceite"
+      ],
+      "recomendaciones": [
+        "Cambia el filtro de aceite en cada cambio."
+      ],
+      "advertencias": [
+        "No mezcles viscosidades distintas a la recomendada."
+      ]
+    },
+    "faros_led": {
+      "titulo": "Focos LED para faros",
+      "especificacion": [
+        "Revisa el tipo de foco de tu faro (ej. H7 / H11 / 9005) en el manual."
+      ],
+      "relacionadas": [
+        "faros_led"
+      ],
+      "fusible": {
+        "caja": "motor",
+        "numero": "M3",
+        "nota": "Faro bajo izquierdo M3 y derecho M4 (ejemplo). Los LED consumen menos corriente que el halógeno."
+      },
+      "recomendaciones": [
+        "Alinea los faros después de instalar para no deslumbrar."
+      ],
+      "advertencias": [
+        "Algunos LED marcan error de foco fundido: puede requerir resistencia o decodificador CANbus."
+      ]
+    },
+    "pastillas_ceramicas": {
+      "titulo": "Balatas cerámicas",
+      "especificacion": [
+        "Juego delantero para disco ventilado."
+      ],
+      "relacionadas": [
+        "pastillas_ceramicas",
+        "liquido_frenos"
+      ],
+      "recomendaciones": [
+        "Rectifica o cambia los discos si tienen escalón."
+      ],
+      "advertencias": [
+        "Haz el asentamiento (bedding) los primeros 300 km."
+      ]
+    }
   }
 }
