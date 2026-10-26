@@ -76,7 +76,20 @@ export function buildProceduralCar(vehicle, mats) {
   return { nodes, ctx };
 }
 
-function createContext(vehicle, mats) {
+/**
+ * Piezas internas para usar dentro de un modelo .glb (que normalmente es solo la piel exterior):
+ * compartimento del motor, interior, cajuela, forros de arcos, piso y escape.
+ */
+export function buildInnerParts(vehicle, mats) {
+  const ctx = createContext(vehicle, mats);
+  const g = new THREE.Group();
+  g.name = 'interiores';
+  for (const s of [-1, 1]) g.add(archLiner(ctx, ctx.xf, s), archLiner(ctx, ctx.xr, s));
+  g.add(underbody(ctx), engineBay(ctx), interior(ctx), trunkBox(ctx));
+  return { group: g, escape: exhaust(ctx), ctx };
+}
+
+export function createContext(vehicle, mats) {
   const sil = vehicle.silueta;
   const dims = vehicle.dimensiones;
   const surf = createBodySurface(sil);

@@ -34,6 +34,9 @@ export async function startApp(rootEl) {
   // Editor de vistas: disponible en desarrollo o con ?editor en la URL.
   const editorEnabled = import.meta.env.DEV || new URLSearchParams(location.search).has('editor');
   if (editorEnabled && applyEditorOverride(vehicle)) console.info('[KarDmo] usando silueta del editor de vistas');
+  // Probar un .glb sin tocar el JSON: ?modelo=models/archivo.glb (solo con el editor habilitado).
+  const modeloParam = editorEnabled && new URLSearchParams(location.search).get('modelo');
+  if (modeloParam) vehicle.modelo = { ...vehicle.modelo, tipo: 'glb', glb_url: modeloParam };
   const ui = renderLayout(rootEl, vehicle);
   const stage = createStage(ui.viewport);
   const goHome = (d = 1.1) => {
@@ -271,6 +274,7 @@ export async function startApp(rootEl) {
   // ---------- Paneles ----------
   const configPanel = createConfiguratorPanel(ui.tab.config, {
     vehicle,
+    capabilities: car.capabilities,
     onChange: (patch) => store.set(patch),
     onKnow: openKnow,
   });

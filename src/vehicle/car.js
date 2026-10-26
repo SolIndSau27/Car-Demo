@@ -15,7 +15,7 @@ const OPENABLE_KIND = { puerta: 'door', cofre: 'hood', cajuela: 'trunk' };
  */
 export async function createCar(vehicle) {
   const mats = createMaterials();
-  const { nodes, ctx } = await loadVehicleModel(vehicle, mats);
+  const { nodes, ctx, capabilities = {} } = await loadVehicleModel(vehicle, mats);
   const labels = Object.fromEntries(vehicle.piezas_carroceria.map((p) => [p.id, p]));
 
   const root = new THREE.Group();
@@ -44,21 +44,28 @@ export async function createCar(vehicle) {
   tag(nodes.carroceria, 'carroceria', 'body');
   if (nodes.escape) body.add(nodes.escape);
 
-  // Contenedores intercambiables (solo modelo procedural).
+  // Contenedores intercambiables. Con un .glb solo aplica el alerón (fascia y fenders son del modelo).
   const slots = {};
   if (ctx) {
-    slots.fascia = nodes.fascia_delantera;
-    slots.fenderL = nodes.salpicadera_izq;
-    slots.fenderR = nodes.salpicadera_der;
-    slots.flares = nodes.extensiones_traseras;
-    slots.aleron = nodes.aleron;
-    body.add(slots.fascia, slots.fenderL, slots.fenderR, slots.flares);
-    // El alerón va dentro de la cajuela para abrir con ella.
-    (openables.cajuela?.children[0] ?? body).add(slots.aleron);
-    tag(slots.fascia, 'fascia_delantera', 'fascia');
-    tag(slots.fenderL, 'salpicadera_izq', 'fender');
-    tag(slots.fenderR, 'salpicadera_der', 'fender');
-    tag(slots.aleron, 'aleron', 'aleron');
+    if (capabilities.fascia) {
+      slots.fascia = nodes.fascia_delantera;
+      body.add(slots.fascia);
+      tag(slots.fascia, 'fascia_delantera', 'fascia');
+    }
+    if (capabilities.fender) {
+      slots.fenderL = nodes.salpicadera_izq;
+      slots.fenderR = nodes.salpicadera_der;
+      slots.flares = nodes.extensiones_traseras;
+      body.add(slots.fenderL, slots.fenderR, slots.flares);
+      tag(slots.fenderL, 'salpicadera_izq', 'fender');
+      tag(slots.fenderR, 'salpicadera_der', 'fender');
+    }
+    if (capabilities.aleron) {
+      slots.aleron = nodes.aleron;
+      // El alerón va dentro de la cajuela para abrir con ella.
+      (openables.cajuela?.children[0] ?? body).add(slots.aleron);
+      tag(slots.aleron, 'aleron', 'aleron');
+    }
   }
 
   // Montaje del motor (el motor se agrega desde main).
@@ -131,6 +138,7 @@ export async function createCar(vehicle) {
   }
 
   return {
+    capabilities,
     setGhost,
     root,
     body,

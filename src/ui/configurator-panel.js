@@ -4,7 +4,7 @@ import { compatibleTires, tireInfo } from '../configurator/tires.js';
 /**
  * Panel "Mi versión". Emite cambios con onChange(patch) y pide fichas con onKnow(itemKey).
  */
-export function createConfiguratorPanel(root, { vehicle, onChange, onKnow }) {
+export function createConfiguratorPanel(root, { vehicle, capabilities = {}, onChange, onKnow }) {
   let cfg = null;
 
   root.addEventListener('click', (ev) => {
@@ -106,10 +106,10 @@ export function createConfiguratorPanel(root, { vehicle, onChange, onKnow }) {
 
       <section class="section">
         ${head('Carrocería')}
-        <p class="muted small" style="margin:0 0 6px">Fascia delantera</p>
-        <div class="option-list">${v.carroceria.fascia.map((o) => option('fa', o.id, cfg.fa === o.id, o.nombre, o.descripcion, `fascia_${o.id}`)).join('')}</div>
-        <p class="muted small" style="margin:12px 0 6px">Salpicaderas (fenders)</p>
-        <div class="option-list">${v.carroceria.fender.map((o) => option('fe', o.id, cfg.fe === o.id, o.nombre, o.descripcion, `fender_${o.id}`)).join('')}</div>
+        ${capabilities.fascia === false ? '' : `<p class="muted small" style="margin:0 0 6px">Fascia delantera</p>
+        <div class="option-list">${v.carroceria.fascia.map((o) => option('fa', o.id, cfg.fa === o.id, o.nombre, o.descripcion, `fascia_${o.id}`)).join('')}</div>`}
+        ${capabilities.fender === false ? '' : `<p class="muted small" style="margin:12px 0 6px">Salpicaderas (fenders)</p>
+        <div class="option-list">${v.carroceria.fender.map((o) => option('fe', o.id, cfg.fe === o.id, o.nombre, o.descripcion, `fender_${o.id}`)).join('')}</div>`}
         <p class="muted small" style="margin:12px 0 6px">Alerón</p>
         <div class="option-list">${v.carroceria.aleron.map((o) => option('al', o.id, cfg.al === o.id, o.nombre, o.descripcion, o.id === 'ninguno' ? null : `aleron_${o.id}`)).join('')}</div>
       </section>
