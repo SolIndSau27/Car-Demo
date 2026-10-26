@@ -77,6 +77,8 @@ export function createStage(container) {
 
   // Franja derecha tapada por la ficha: el encuadre se recorre para centrar en la zona libre.
   let insetRight = 0;
+  let override = null; // cámara alternativa (vistas ortogonales del editor)
+  const resizeListeners = new Set();
   function resize() {
     const w = container.clientWidth || 1;
     const h = container.clientHeight || 1;
@@ -86,15 +88,16 @@ export function createStage(container) {
     if (inset > 0) camera.setViewOffset(w + inset, h, inset, 0, w, h);
     else camera.clearViewOffset();
     camera.updateProjectionMatrix();
+    resizeListeners.forEach((fn) => fn(w, h));
   }
   new ResizeObserver(resize).observe(container);
   resize();
 
   const tickers = new Set();
   const frame = () => {
-    controls.update();
+    if (!override) controls.update();
     tickers.forEach((fn) => fn());
-    renderer.render(scene, camera);
+    renderer.render(scene, override ?? camera);
   };
   renderer.setAnimationLoop(frame);
 
@@ -104,6 +107,21 @@ export function createStage(container) {
     camera,
     controls,
     onTick: (fn) => tickers.add(fn),
+    /** Usa otra cámara (o null para volver a la orbital). */
+    setActiveCamera(cam) {
+      override = cam;
+      controls.enabled = !cam;
+    },
+    get activeCamera() {
+      return override ?? camera;
+    },
+    onResize(fn) {
+      resizeListeners.add(fn);
+      fn(container.clientWidth || 1, container.clientHeight || 1);
+      return () => resizeListeners.delete(fn);
+    },
+    floor,
+    grid,
     setInsetRight(px) {
       insetRight = px;
       resize();

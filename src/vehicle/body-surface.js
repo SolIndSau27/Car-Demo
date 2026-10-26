@@ -17,6 +17,15 @@ export function createBodySurface(sil) {
   const wMax = smoothProfile(sil.media_anchura);
   const yRock = smoothProfile(sil.estribo);
   const crown = sil.corona ?? 0.045;
+  // Forma de la sección (ajustable desde el editor de vistas, vista frontal/trasera).
+  const sec = {
+    ancho_borde: 0.9, // ancho del borde del cofre/cajuela respecto al máximo
+    caida_techo: 0.16, // cuánto se angosta el techo (tumblehome)
+    altura_hombro: 0.7, // altura del punto más ancho entre estribo y cintura (0–1)
+    entrada_cintura: 0.975, // ancho en la cintura respecto al máximo
+    entrada_estribo: 0.93, // ancho en el estribo respecto al máximo
+    ...(sil.seccion ?? {}),
+  };
 
   function controlPoints(x) {
     const wM = wMax(x);
@@ -25,15 +34,16 @@ export function createBodySurface(sil) {
     const yR = yRock(x);
     const yE = Math.min(Math.max(yT - crown, yB + 0.012), yT - 0.002);
     const gh = THREE.MathUtils.clamp((yE - yB) / 0.3, 0, 1);
-    const wE = wM * (0.9 - 0.16 * gh);
-    const yS = yR + 0.13 + (yB - yR - 0.13) * 0.7;
+    const wE = wM * (sec.ancho_borde - sec.caida_techo * gh);
+    const yS = yR + 0.13 + (yB - yR - 0.13) * sec.altura_hombro;
+    const wB = wM * sec.entrada_cintura;
     return [
       [0, yR - 0.05],
-      [wM * 0.93, yR],
+      [wM * sec.entrada_estribo, yR],
       [wM * 0.99, yR + 0.13],
       [wM, yS],
-      [wM * 0.975, yB],
-      [(wM * 0.975 + wE) / 2 + 0.014 * gh, (yB + yE) / 2],
+      [wB, yB],
+      [(wB + wE) / 2 + 0.014 * gh, (yB + yE) / 2],
       [wE, yE],
       [0, yT],
     ];

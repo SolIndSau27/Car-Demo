@@ -71,3 +71,14 @@ Para validar un dato: corrígelo en el JSON y cambia `"verificado"` a `true`; la
 2. Crea o reutiliza un archivo de partes de motor en `src/data/parts/`.
 3. Modelo 3D: ajusta la `silueta` (procedural) **o** pon `"modelo": { "tipo": "glb", "glb_url": "..." }` con un .glb con licencia cuyos nodos se llamen igual que los ids (`puerta_del_izq`, `cofre`, `cajuela`, `monoblock`, …). Ver `src/vehicle/model-source.js`.
 4. En fase 1 el vehículo se importa en `src/app.js`; en fase 2 se elegirá desde un selector.
+
+## Editor de vistas (ajustar la forma con planos o fotos)
+
+Disponible con `npm run dev` o abriendo la app con `?editor` en la URL (botón 📐 en la barra del visor).
+
+1. Elige la vista (Lado, Frente, Atrás, Arriba) y carga un plano o una foto recta de esa vista.
+2. **Calibrar**: haz clic en los puntos que te pide (puntas del carro, costados, piso); la imagen queda a escala real con las medidas del JSON.
+3. Arrastra los puntos de los perfiles (techo, cintura, estribo, ancho) hasta que coincidan con la imagen. En Frente/Atrás ajusta la sección con los controles.
+4. **Aplicar al carro** para verlo completo (se guarda en este navegador) y **Exportar JSON** para pasar la `silueta` a `src/data/vehicles/<modelo>.json`.
+
+Las imágenes y la calibración se guardan solo en tu navegador (IndexedDB/localStorage); no se suben a git ni se publican con la app.

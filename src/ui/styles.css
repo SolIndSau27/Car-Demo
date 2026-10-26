@@ -332,3 +332,18 @@ table.data th { color: var(--muted); font-weight: 600; }
 .step-num { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
 .guide-nav { justify-content: space-between; }
 .guide-nav .btn { flex: 1; }
+
+/* ---------- Editor de vistas ---------- */
+.editor-panel { position: fixed; top: calc(var(--topbar-h) + 8px); right: 8px; width: 364px; max-height: calc(100vh - var(--topbar-h) - 16px); overflow-y: auto; background: rgba(255, 255, 255, 0.96); border-radius: 12px; box-shadow: var(--shadow); padding: 12px; z-index: 7; font-size: 13px; }
+.editor-panel header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.editor-panel section { border-top: 1px solid var(--line); padding: 10px 0; }
+.editor-panel h4 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.editor-panel footer { display: flex; gap: 6px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px; }
+.editor-panel .row-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.editor-panel .slider { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; color: var(--muted); }
+.editor-panel .slider input { width: 100%; }
+.editor-panel .callout { background: #ffe8f6; color: #a1006b; border-radius: 8px; padding: 8px 10px; font-weight: 600; }
+.legend { list-style: none; padding: 0; margin: 0 0 8px; }
+.legend li { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.legend span { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
+@media (max-width: 760px) { .editor-panel { top: auto; bottom: 0; left: 0; right: 0; width: auto; max-height: 50%; border-radius: 16px 16px 0 0; } }

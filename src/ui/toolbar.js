@@ -17,6 +17,7 @@ export function createToolbar(root, onAction) {
         btn('explode', '💥', 'Explosionar', { on: s.engine === 'explosionado', disabled: !out || s.busy }),
         btn('xray', '🩻', 'Rayos X', { on: s.xray }),
         btn('home', '🎯', 'Vista inicial'),
+        s.editor ? btn('editor', '📐', 'Editor de vistas') : '',
       ].join('');
     },
   };

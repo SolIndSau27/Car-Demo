@@ -26,10 +26,14 @@ import { on } from './ui/dom.js';
 import { trackClick } from './services/tracking.js';
 import { listCars, saveCar, deleteCar, saveCurrent, loadCurrent } from './services/storage.js';
 import { buildShareUrl, readConfigFromUrl, clearConfigFromUrl } from './services/share-url.js';
+import { applyEditorOverride } from './editor/ref-store.js';
 
 const DOORS = ['puerta_del_izq', 'puerta_del_der', 'puerta_tras_izq', 'puerta_tras_der'];
 
 export async function startApp(rootEl) {
+  // Editor de vistas: disponible en desarrollo o con ?editor en la URL.
+  const editorEnabled = import.meta.env.DEV || new URLSearchParams(location.search).has('editor');
+  if (editorEnabled && applyEditorOverride(vehicle)) console.info('[KarDmo] usando silueta del editor de vistas');
   const ui = renderLayout(rootEl, vehicle);
   const stage = createStage(ui.viewport);
   const goHome = (d = 1.1) => {
@@ -192,6 +196,8 @@ export async function startApp(rootEl) {
     flyToObject(stage, part, { padding: 3.4, minDist: 0.55 });
   }
 
+  let editor = null;
+
   // ---------- Barra de acciones ----------
   const toolbar = createToolbar(ui.toolbar, handleAction);
   function viewState() {
@@ -202,6 +208,7 @@ export async function startApp(rootEl) {
       engine: ctl.state,
       xray: ctl.xray,
       busy: ctl.busy,
+      editor: editorEnabled,
     };
   }
   function refreshToolbar() {
@@ -239,6 +246,23 @@ export async function startApp(rootEl) {
       case 'home':
         await goHome();
         break;
+      case 'editor': {
+        if (editor) return;
+        ui.drawer.close();
+        const { createViewEditor } = await import('./editor/view-editor.js');
+        ui.toolbar.hidden = true;
+        editor = createViewEditor({
+          stage,
+          car,
+          vehicle,
+          viewport: ui.viewport,
+          onClose: () => {
+            editor = null;
+            ui.toolbar.hidden = false;
+          },
+        });
+        break;
+      }
     }
     refreshToolbar();
   }
@@ -426,5 +450,5 @@ export async function startApp(rootEl) {
   });
   if (fromUrl) toast(`Abriste un carro compartido: ${store.get().n}`);
 
-  if (import.meta.env.DEV) window.__kardmo = { gsap, stage, car, ctl, store, engine, focusPart, handleAction, startGuide, showGuideStep };
+  if (import.meta.env.DEV) window.__kardmo = { get editor() { return editor; }, gsap, stage, car, ctl, store, engine, focusPart, handleAction, startGuide, showGuideStep };
 }

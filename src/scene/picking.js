@@ -6,7 +6,7 @@ import { setHighlight } from './highlight.js';
  * resolve(objeto) devuelve { root, info } o null; root es lo que se resalta.
  */
 export function createPicker(stage, { getTargets, resolve, onHover, onClick }) {
-  const { renderer, camera } = stage;
+  const { renderer } = stage;
   const el = renderer.domElement;
   const ray = new THREE.Raycaster();
   const ndc = new THREE.Vector2();
@@ -17,7 +17,7 @@ export function createPicker(stage, { getTargets, resolve, onHover, onClick }) {
   function hit(clientX, clientY) {
     const r = el.getBoundingClientRect();
     ndc.set(((clientX - r.left) / r.width) * 2 - 1, -((clientY - r.top) / r.height) * 2 + 1);
-    ray.setFromCamera(ndc, camera);
+    ray.setFromCamera(ndc, stage.activeCamera);
     const hits = ray.intersectObjects(getTargets(), true);
     for (const h of hits) {
       if (!isVisible(h.object)) continue;
