@@ -33,7 +33,11 @@ export function flyTo(stage, position, target, duration = 1.1) {
   });
 }
 
-export const HOME_VIEW = {
-  position: new THREE.Vector3(5.6, 2.4, 5.2),
-  target: new THREE.Vector3(0.2, 0.6, 0),
-};
+const HOME_DIR = new THREE.Vector3(5.4, 1.8, 5.2);
+const HOME_TARGET = new THREE.Vector3(0.1, 0.6, 0);
+
+/** Vista inicial; en pantallas angostas (celular vertical) la cámara se aleja para que quepa el carro. */
+export function homeView(aspect = 1.6) {
+  const k = aspect < 1.3 ? Math.min(1.3 / aspect, 2.2) : 1;
+  return { position: HOME_TARGET.clone().addScaledVector(HOME_DIR, k), target: HOME_TARGET.clone() };
+}

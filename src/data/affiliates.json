@@ -1081,6 +1081,26 @@
         }
       ]
     },
+    "bujias_iridio": {
+      "titulo": "Juego de 4 bujías de iridio (mejora)",
+      "tipo": "producto",
+      "productos": [
+        {
+          "tienda": "mercadolibre",
+          "titulo": "Juego de 4 bujías de iridio (mejora)",
+          "url_base": "https://listado.mercadolibre.com.mx/bujias-iridio-sonata-2016-2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1100
+        },
+        {
+          "tienda": "amazon",
+          "titulo": "Juego de 4 bujías de iridio (mejora)",
+          "url_base": "https://www.amazon.com.mx/s?k=bujias+iridio+sonata+2016+2.4",
+          "tag_afiliado": "",
+          "precio_aprox_mxn": 1190
+        }
+      ]
+    },
     "aceite_sintetico": {
       "titulo": "Aceite sintético 5W-20 (5 cuartos)",
       "tipo": "producto",

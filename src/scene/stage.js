@@ -86,11 +86,23 @@ export function createStage(container) {
   resize();
 
   const tickers = new Set();
-  renderer.setAnimationLoop(() => {
+  const frame = () => {
     controls.update();
     tickers.forEach((fn) => fn());
     renderer.render(scene, camera);
-  });
+  };
+  renderer.setAnimationLoop(frame);
 
-  return { renderer, scene, camera, controls, onTick: (fn) => tickers.add(fn) };
+  return {
+    renderer,
+    scene,
+    camera,
+    controls,
+    onTick: (fn) => tickers.add(fn),
+    /** Detiene/reanuda el loop (útil para capturas y pruebas automáticas). */
+    setPaused(paused) {
+      renderer.setAnimationLoop(paused ? null : frame);
+      if (paused) frame();
+    },
+  };
 }
