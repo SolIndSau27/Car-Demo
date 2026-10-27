@@ -3,7 +3,7 @@ KarDmo · Preparación automática de un modelo 3D de carro (p. ej. generado por
 Hunyuan3D / TRELLIS) para usarlo en la app.
 
 Qué hace, sin intervención manual:
-  1. Importa .glb/.gltf/.obj/.ply y une todas las mallas.
+  1. Importa .glb/.gltf/.obj/.ply/.stl y une todas las mallas.
   2. Orienta: eje largo a lo largo de X, frente hacia +X (detecta el cofre: es más bajo que la cajuela).
   3. Escala a las medidas reales del JSON del vehículo (largo, ancho sin espejos, alto) y lo pone en el piso.
   4. Detecta los ejes por las huellas de las llantas y quita las ruedas de la IA (la app pone sus rines paramétricos).
@@ -90,6 +90,8 @@ def import_model(path):
         bpy.ops.wm.obj_import(filepath=path)
     elif ext == ".ply":
         bpy.ops.wm.ply_import(filepath=path)
+    elif ext == ".stl":
+        bpy.ops.wm.stl_import(filepath=path)
     else:
         raise SystemExit(f"Formato no soportado: {ext}")
     meshes = [o for o in bpy.context.scene.objects if o.type == "MESH"]
@@ -128,9 +130,30 @@ def apply_matrix(obj, m):
 # ---------------------------------------------------------------------------------------------
 
 
-def orient(obj, front_hint):
+def orient(obj, front_hint, up_hint="auto", flip_up=False):
     co = coords(obj)
     ext = co.max(0) - co.min(0)
+    # Eje vertical: el que se indique o, si no, el más corto de los dos que no son el largo
+    # (en un auto el alto es menor que el ancho). STL/OBJ de IA suelen venir con Y hacia arriba.
+    axes = "xyz"
+    if up_hint != "auto":
+        up = axes.index(up_hint)
+    else:
+        long_ax = int(np.argmax(ext))
+        others = [i for i in range(3) if i != long_ax]
+        up = min(others, key=lambda i: ext[i])
+    if up != 2:
+        # Lleva el eje 'up' a Z.
+        # +Y -> +Z (giro de +90° en X) o +X -> +Z (giro de -90° en Y).
+        rot = Matrix.Rotation(math.radians(90), 4, "X") if up == 1 else Matrix.Rotation(math.radians(-90), 4, "Y")
+        apply_matrix(obj, rot)
+        log(f"Eje vertical era {axes[up].upper()}: rotado para dejarlo en Z.")
+    if flip_up:
+        apply_matrix(obj, Matrix.Rotation(math.radians(180), 4, "X"))
+        log("Volteado de cabeza por --flip-up.")
+    if up != 2 or flip_up:
+        co = coords(obj)
+        ext = co.max(0) - co.min(0)
     if ext[1] > ext[0]:
         apply_matrix(obj, Matrix.Rotation(math.radians(90), 4, "Z"))
         log("Eje largo estaba en Y: rotado 90°.")
@@ -160,6 +183,22 @@ def orient(obj, front_hint):
             log("AVISO: la detección del frente es dudosa; usa --front +x o --front -x si sale al revés.")
     if not front_pos:
         apply_matrix(obj, Matrix.Rotation(math.radians(180), 4, "Z"))
+
+
+def remove_ground_plate(obj):
+    """Algunas IA agregan una placa plana bajo el carro: se eliminan caras horizontales pegadas al piso."""
+    co = coords(obj)
+    zmin, zmax = co[:, 2].min(), co[:, 2].max()
+    tol = (zmax - zmin) * 0.012
+    bm = bmesh.new()
+    bm.from_mesh(obj.data)
+    doomed = [f for f in bm.faces if abs(f.normal.z) > 0.9 and all(v.co.z < zmin + tol for v in f.verts)]
+    if doomed:
+        bmesh.ops.delete(bm, geom=doomed, context="FACES")
+        bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context="VERTS")
+        bm.to_mesh(obj.data)
+        log(f"Placa del piso eliminada ({len(doomed)} caras).")
+    bm.free()
 
 
 def fit_dimensions(obj, dims, uniform):
@@ -449,6 +488,8 @@ def main(argv):
     p.add_argument("--vehicle", required=True, help="JSON del vehículo (silueta, dimensiones, llantas)")
     p.add_argument("--output", required=True)
     p.add_argument("--front", choices=["+x", "-x", "auto"], default="auto")
+    p.add_argument("--up", choices=["x", "y", "z", "auto"], default="auto", help="eje vertical del archivo de entrada")
+    p.add_argument("--flip-up", action="store_true", help="si el modelo sale de cabeza")
     p.add_argument("--uniform", action="store_true", help="escala uniforme (conserva proporciones de la IA)")
     p.add_argument("--keep-wheels", action="store_true")
     p.add_argument("--max-faces", type=int, default=250000)
@@ -467,7 +508,8 @@ def main(argv):
     obj = import_model(a.input)
     image = find_texture(obj)
     log(f"Importado: {len(obj.data.polygons)} caras, textura: {image.name if image else 'no'}")
-    orient(obj, a.front)
+    orient(obj, a.front, a.up, a.flip_up)
+    remove_ground_plate(obj)
     report = {"entrada": os.path.basename(a.input)}
     report.update(fit_dimensions(obj, dims, a.uniform))
     xf, xr, found = detect_axles(obj, dims)
